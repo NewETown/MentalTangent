@@ -1,0 +1,13 @@
+/****************
+ * Custom CSS for Mental Tangent Playground
+ * For overriding Bootstrap 3 pre-set stuff
+ * Updated 12/26/2013
+ * By Everett Carney, everett@mentaltangent.net
+ ****************/
+
+ #intro span {
+ 	/* Spans are dumb and need to be told what to do so they animate properly. */
+ 	display: -moz-inline-stack;
+ 	display: inline-block;
+ 	*display: inline;
+ }

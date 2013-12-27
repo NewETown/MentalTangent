@@ -1,0 +1,62 @@
+/***************************
+ * Animation Playground
+ * Custom animations by Everett Carney, everett@mentaltangent.net
+ * Last update 12/26/2013
+ ***************************/
+
+ .mental {
+	-webkit-animation-duration: 1s;
+	   -moz-animation-duration: 1s;
+	     -o-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	   -moz-animation-fill-mode: both;
+	     -o-animation-fill-mode: both;
+	        animation-fill-mode: both;
+}
+
+.mental.drop-in-left {
+	-webkit-animation-duration: 1.5s;
+	   -moz-animation-duration: 1.5s;
+	     -o-animation-duration: 1.5s;
+	        animation-duration: 1.5s;
+}
+
+@-webkit-keyframes drop-in-left {
+	0% { -webkit-transform: rotate(40deg) translate(-700px, -250px); -webkit-animation-timing-function: ease-in; }
+	75% { -webkit-transform: rotate(40deg) translate(0px, 0px); -webkit-transform-origin: bottom right; -webkit-animation-timing-function: ease-out; }
+	83% { -webkit-transform: rotate(44deg) translate(0px, 0px); -webkit-transform-origin: bottom right; -webkit-animation-timing-function: ease-out; }
+	90% { -webkit-transform: rotate(40deg) translate(0px, 0px); -webkit-transform-origin: bottom right; -webkit-animation-timing-function: ease-out; }
+	100% { -webkit-transform: rotate(0deg); -webkit-transform-origin: bottom right; -webkit-animation-timing-function: ease-in;}
+}
+
+@-moz-keyframes drop-in-left {
+	0% { -moz-transform: rotate(40deg) translate(-700px, -250px); -moz-animation-timing-function: ease-in; }
+	75% { -moz-transform: rotate(40deg) translate(0px, 0px); -moz-transform-origin: bottom right; -moz-animation-timing-function: ease-out; }
+	83% { -moz-transform: rotate(44deg) translate(0px, 0px); -moz-transform-origin: bottom right; -moz-animation-timing-function: ease-out; }
+	90% { -moz-transform: rotate(40deg) translate(0px, 0px); -moz-transform-origin: bottom right; -moz-animation-timing-function: ease-out; }
+	100% { -moz-transform: rotate(0deg); -moz-transform-origin: bottom right; -moz-animation-timing-function: ease-in;}
+}
+
+@-o-keyframes drop-in-left {
+	0% { -o-transform: rotate(40deg) translate(-700px, -250px); -o-animation-timing-function: ease-in; }
+	75% { -o-transform: rotate(40deg) translate(0px, 0px); -o-transform-origin: bottom right; -o-animation-timing-function: ease-out; }
+	83% { -o-transform: rotate(44deg) translate(0px, 0px); -o-transform-origin: bottom right; -o-animation-timing-function: ease-out; }
+	90% { -o-transform: rotate(40deg) translate(0px, 0px); -o-transform-origin: bottom right; -o-animation-timing-function: ease-out; }
+	100% { -o-transform: rotate(0deg); -o-transform-origin: bottom right; -o-animation-timing-function: ease-in;}
+}
+
+@keyframes drop-in-left {
+	0% { transform: rotate(40deg) translate(-700px, -250px); animation-timing-function: ease-in; }
+	75% { transform: rotate(40deg) translate(0px, 0px); transform-origin: bottom right; animation-timing-function: ease-out; }
+	83% { transform: rotate(44deg) translate(0px, 0px); transform-origin: bottom right; animation-timing-function: ease-out; }
+	90% { transform: rotate(40deg) translate(0px, 0px); transform-origin: bottom right; animation-timing-function: ease-out; }
+	100% { transform: rotate(0deg); transform-origin: bottom right; animation-timing-function: ease-in;}
+}
+
+.mental.drop-in-left {
+	-webkit-animation-name: drop-in-left;
+	-moz-animation-name: drop-in-left;
+	-o-animation-name: drop-in-left;
+	animation-name: drop-in-left;
+}
