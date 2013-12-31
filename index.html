@@ -2,19 +2,41 @@
 <head>
 	<title>The Playground</title>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script type="text/javascript" src="js/raphael-min.js"></script>
-	<script type="text/javascript" src="js/awesomation.js"></script>
-	<script type="text/javascript" src="js/divPeek.js"></script>
+	<script src="js/raphael-min.js"></script>
+	<script src="js/awesomation.js"></script>
+	<script src="js/divPeek.js"></script>
+	<!-- <script src="js/jquery.mousewheel.js"></script>  ** Try this out later ** -->
+	<script src="js/sly.min.js"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/custom.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/animation-playground.css">
 
+	<script type="text/javascript">
+	// $(document).ready(function() {
+	// 	$('html, body, *').mousewheel(function(e, delta) {
+	// 		this.scrollLeft -= (delta * 40);
+	// 		e.preventDefault();
+	// 	});
+	// });
+	</script>
+
 </head>
 <body>
 	<!-- <div id="canvas"></div> -->
-	<div id="intro" style="text-align:center; margin-top:20%;">
-		<h1><span id="m1" class="mental drop-in-left">M</span><span id="e1">e</span><span id="n1">n</span><span id="t1">t</span><span id="a1">a</span><span id="l1">l</span> <span id="t2">T</span><span id="a2">a</span><span id="n2">n</span><span id="g2">g</span><span id="e2">e</span><span id="n2">n</span><span id="t2">t</span></h1>
-		<p>Welcome to my playground.</p>
+	<div id="intro" 
+		<div id="slider">
+			<h1 style="text-align:center; margin-top:20%;"><span id="m1" class="mental m1-anim">M</span><span id="e1" class="mental e1-anim">e</span><span id="n1" class="mental n1-anim">n</span><span id="t1" class="mental t1-anim">t</span><span id="a1" class="mental a1-anim">a</span><span id="l1" class="mental l1-anim">l</span> <span id="t2" class="tangent t2-anim">T</span><span id="a2" class="tangent a2-anim">a</span><span id="n2" class="tangent n2-anim">n</span><span id="g2" class="tangent g2-anim">g</span><span id="e2" class="tangent e2-anim">e</span><span id="n2" class="tangent n3-anim">n</span><span id="t2" class="tangent t3-anim">t</span></h1>
+
+			<p id="welcome" style="padding-top:25px;text-align:center;">Welcome to my playground.</p>
+		</div>
 	</div>
+
+	<div id="scrollbar">
+		<div class="handle"></div>
+	</div>
+
+	<script type="text/javascript">
+		var sly = new Sly('#intro', {horizontal: 1, scrollSource: '#slider', dragSource: '#slider', touchDragging: 1, releaseSwing: 1, swingSpeed: 0.2, scrollBar: null,}).init();
+	</script>
 </body>
 </html>

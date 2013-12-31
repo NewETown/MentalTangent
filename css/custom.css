@@ -5,9 +5,20 @@
  * By Everett Carney, everett@mentaltangent.net
  ****************/
 
+#intro {
+	height: 600px;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important; 
+}
+
  #intro span {
  	/* Spans are dumb and need to be told what to do so they animate properly. */
  	display: -moz-inline-stack;
  	display: inline-block;
  	*display: inline;
+ }
+
+ #slider {
+ 	margin-top: 0px !important;
+ 	margin-bottom: 0px !important;
  }
