@@ -27,7 +27,7 @@
 		<div id="slider">
 			<h1 style="text-align:center; margin-top:20%;"><span id="m1" class="mental m1-anim">M</span><span id="e1" class="mental e1-anim">e</span><span id="n1" class="mental n1-anim">n</span><span id="t1" class="mental t1-anim">t</span><span id="a1" class="mental a1-anim">a</span><span id="l1" class="mental l1-anim">l</span> <span id="t2" class="tangent t2-anim">T</span><span id="a2" class="tangent a2-anim">a</span><span id="n2" class="tangent n2-anim">n</span><span id="g2" class="tangent g2-anim">g</span><span id="e2" class="tangent e2-anim">e</span><span id="n2" class="tangent n3-anim">n</span><span id="t2" class="tangent t3-anim">t</span></h1>
 
-			<p id="welcome" style="padding-top:25px;text-align:center;" class="welcome welcome-fade">Welcome to my <span id="pP" class="backflip">p</span>layground.</p>
+			<p id="welcome" style="padding-top:25px;text-align:center;" class="welcome welcome-fade">Welcome to my <span id="pP">p</span><span id="pL">l</span><span id="pA">a</span><span id="pY">y</span><span id="pG">g</span><span id="pR">r</span><span id="pO">o</span><span id="pU">u</span><span id="pN">n</span><span id="pD">d</span>.</p>
 		</div>
 	</div>
 
@@ -37,6 +37,35 @@
 
 	<script type="text/javascript">
 		var sly = new Sly('#intro', {horizontal: 1, scrollSource: '#slider', dragSource: '#slider', touchDragging: 1, releaseSwing: 1, swingSpeed: 0.2, scrollBar: null,}).init();
+		var playground = [$('#pP'), $('#pL'), $('#pA'), $("#pY"), $("#pG"), $("#pR"), $("#pO"), $("#pU"), $("#pN"), $("#pD")];
+		var backflips = ['backflip-0', 'backflip-1', 'backflip-2', 'backflip-3'];
+		// First we need to wait for the element to appear, then we can call random backflip ninja moves
+		var backflipCalls = 0;
+		function backflip() {
+			console.log("Backflippin");
+			var flipInterval = setInterval(function () {
+				var _holder = playground,
+				_num = null;
+				console.log(_holder.length);
+				for (var i = 0; i < 4; i++) {
+					_num = Math.floor(Math.random()*_holder.length);
+					$(_holder[_num]).addClass(backflips[i]);
+					_holder.splice(_num, 1);
+				};
+				backflipCalls++;
+				if(backflipCalls >= 4)
+					clearInterval(flipInterval);
+			}, 5000);
+		}
+
+		backflip();
+
+		// transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd
+		// animationend webkitAnimationEnd oAnimationEnd oanimationend MSAnimationEnd
+		// $('#welcome').on('animationend webkitAnimationEnd oAnimationEnd oanimationend MSAnimationEnd', function() {
+		// 	    startBackflips();
+		// });
+		
 	</script>
 </body>
 </html>

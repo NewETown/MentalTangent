@@ -424,17 +424,14 @@
 
 @-moz-keyframes backflip {
 	0% { -moz-transform: translateY(0px) scaleY(0) rotate(0deg); }
-	20% { -moz-transform: translateY(0px) scaleY(0.8) rotate(0deg); -moz-animation-timing-function: ease-in; }
-	70% { -moz-transform: translateY(-20px) scaleY(1) rotate(-360deg); -moz-animation-timing-function: ease-out; }
-	90% { -moz-transform: translateY(0px) scaleY(0.8); -moz-animation-timing-function: ease-in; }
+	30% { -moz-transform: translateY(0px) scaleY(0.8) rotate(0deg); -moz-transform-origin: 50% 100%; -moz-animation-timing-function: ease-in; }
+	31% { -moz-transform-origin: 50% 50%; }
+	70% { -moz-transform: translateY(-20px) scaleY(1) rotate(-360deg); -moz-transform-origin: 50% 50%; -moz-animation-timing-function: ease-out; }
+	87% { -moz-transform: translateY(0px) scaleY(0.8); -moz-transform-origin: 50% 100%; -moz-animation-timing-function: ease-in; }
 	100% { -moz-transform: translateY(0px) scaleY(0)); }
 }
 
-.backflip {
-	-webkit-animation-delay: 5s;
-	   -moz-animation-delay: 5s;
-	     -o-animation-delay: 4s;
-	        animation-delay: 4s;
+.backflip-0 {
 	-webkit-animation-duration: 1.5s;
 	   -moz-animation-duration: 1.5s;
 	     -o-animation-duration: 1.5s;
@@ -443,12 +440,49 @@
 	   -moz-animation-name: backflip;
 	     -o-animation-name: backflip;
 	        animation-name: backflip;
-    -webkit-animation-fill-mode: both;
-	   -moz-animation-fill-mode: both;
-	     -o-animation-fill-mode: both;
-	        animation-fill-mode: both;
-	/*-webkit-animation-iteration-count: infinite;
-	   -moz-animation-iteration-count: infinite;
-		 -o-animation-iteration-count: infinite;
-			animation-iteration-count: infinite;*/
+}
+
+.backflip-1 {
+	-webkit-animation-delay: .3s;
+	   -moz-animation-delay: .3s;
+	     -o-animation-delay: .3s;
+	        animation-delay: .3s;
+	-webkit-animation-duration: 1.5s;
+	   -moz-animation-duration: 1.5s;
+	     -o-animation-duration: 1.5s;
+	        animation-duration: 1.5s;
+	-webkit-animation-name: backflip;
+	   -moz-animation-name: backflip;
+	     -o-animation-name: backflip;
+	        animation-name: backflip;
+}
+
+.backflip-2 {
+	-webkit-animation-delay: .6s;
+	   -moz-animation-delay: .6s;
+	     -o-animation-delay: .6s;
+	        animation-delay: .6s;
+	-webkit-animation-duration: 1.5s;
+	   -moz-animation-duration: 1.5s;
+	     -o-animation-duration: 1.5s;
+	        animation-duration: 1.5s;
+	-webkit-animation-name: backflip;
+	   -moz-animation-name: backflip;
+	     -o-animation-name: backflip;
+	        animation-name: backflip;
+}
+
+.backflip-3 {
+	-webkit-animation-delay: .9s;
+	   -moz-animation-delay: .9s;
+	     -o-animation-delay: .9s;
+	        animation-delay: .9s;
+	-webkit-animation-duration: 1.5s;
+	   -moz-animation-duration: 1.5s;
+	     -o-animation-duration: 1.5s;
+	        animation-duration: 1.5s;
+	-webkit-animation-name: backflip;
+	   -moz-animation-name: backflip;
+	     -o-animation-name: backflip;
+	        animation-name: backflip;
 }
