@@ -5,38 +5,41 @@
 	<script src="js/raphael-min.js"></script>
 	<script src="js/awesomation.js"></script>
 	<script src="js/divPeek.js"></script>
-	<!-- <script src="js/jquery.mousewheel.js"></script>  ** Try this out later ** -->
-	<script src="js/sly.min.js"></script>
+	<script src="js/jquery.mousewheel.js"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/custom.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/animation-playground.css">
 
-	<script type="text/javascript">
-	// $(document).ready(function() {
-	// 	$('html, body, *').mousewheel(function(e, delta) {
-	// 		this.scrollLeft -= (delta * 40);
-	// 		e.preventDefault();
-	// 	});
-	// });
-	</script>
-
 </head>
 <body>
-	<!-- <div id="canvas"></div> -->
-	<div id="intro" 
+	<div id="main" class="sky">
 		<div id="slider">
-			<h1 style="text-align:center; margin-top:20%;"><span id="m1" class="mental m1-anim">M</span><span id="e1" class="mental e1-anim">e</span><span id="n1" class="mental n1-anim">n</span><span id="t1" class="mental t1-anim">t</span><span id="a1" class="mental a1-anim">a</span><span id="l1" class="mental l1-anim">l</span> <span id="t2" class="tangent t2-anim">T</span><span id="a2" class="tangent a2-anim">a</span><span id="n2" class="tangent n2-anim">n</span><span id="g2" class="tangent g2-anim">g</span><span id="e2" class="tangent e2-anim">e</span><span id="n2" class="tangent n3-anim">n</span><span id="t2" class="tangent t3-anim">t</span></h1>
+			<div class="intro">
+				<h1><span id="m1" class="mental m1-anim">M</span><span id="e1" class="mental e1-anim">e</span><span id="n1" class="mental n1-anim">n</span><span id="t1" class="mental t1-anim">t</span><span id="a1" class="mental a1-anim">a</span><span id="l1" class="mental l1-anim">l</span> <span id="t2" class="tangent t2-anim">T</span><span id="a2" class="tangent a2-anim">a</span><span id="n2" class="tangent n2-anim">n</span><span id="g2" class="tangent g2-anim">g</span><span id="e2" class="tangent e2-anim">e</span><span id="n2" class="tangent n3-anim">n</span><span id="t2" class="tangent t3-anim">t</span></h1>
 
-			<p id="welcome" style="padding-top:25px;text-align:center;" class="welcome welcome-fade">Welcome to my <span id="pP">p</span><span id="pL">l</span><span id="pA">a</span><span id="pY">y</span><span id="pG">g</span><span id="pR">r</span><span id="pO">o</span><span id="pU">u</span><span id="pN">n</span><span id="pD">d</span>.</p>
-		</div>
-	</div>
+				<p id="welcome" style="padding-top:25px;" class="welcome welcome-fade">Welcome to my <span id="pP">p</span><span id="pL">l</span><span id="pA">a</span><span id="pY">y</span><span id="pG">g</span><span id="pR">r</span><span id="pO">o</span><span id="pU">u</span><span id="pN">n</span><span id="pD">d</span>.</p>
+			</div>
 
-	<div id="scrollbar">
-		<div class="handle"></div>
+			<div id="mountains1">
+				<!-- First mountain scene -->
+				<div id="mountainCanvas"></div>
+			</div>
+
+		</div> <!-- /slider -->
+
+		<div class="grass_ph"></div>
+
 	</div>
 
 	<script type="text/javascript">
-		var sly = new Sly('#intro', {horizontal: 1, scrollSource: '#slider', dragSource: '#slider', touchDragging: 1, releaseSwing: 1, swingSpeed: 0.2, scrollBar: null,}).init();
+
+		// $('#main').sly({
+		// 	horizontal: 1,
+		// 	itemNav: 0,
+		// 	dragContent: 1,
+		// 	scrollBy: 20
+		// }); // ('#main', { itemNav: 0, horizontal: 1, scrollSource: '#main', dragSource: '#main', touchDragging: 1, releaseSwing: 1, swingSpeed: 0.2, scrollBar: '#scrollbar' }).init();
+
 		var playground = [$('#pP'), $('#pL'), $('#pA'), $("#pY"), $("#pG"), $("#pR"), $("#pO"), $("#pU"), $("#pN"), $("#pD")];
 		var backflips = ['backflip-0', 'backflip-1', 'backflip-2', 'backflip-3'];
 		// First we need to wait for the element to appear, then we can call random backflip ninja moves
@@ -60,12 +63,12 @@
 
 		backflip();
 
-		// transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd
-		// animationend webkitAnimationEnd oAnimationEnd oanimationend MSAnimationEnd
-		// $('#welcome').on('animationend webkitAnimationEnd oAnimationEnd oanimationend MSAnimationEnd', function() {
-		// 	    startBackflips();
-		// });
-		
+		$("#main").mousewheel(function(event, delta) {
+
+	      this.scrollLeft -= (delta * 60);
+	    
+	      event.preventDefault();
+	    });
 	</script>
 </body>
 </html>

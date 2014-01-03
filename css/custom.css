@@ -5,20 +5,80 @@
  * By Everett Carney, everett@mentaltangent.net
  ****************/
 
-#intro {
-	height: 600px;
-	padding-top: 0px !important;
-	padding-bottom: 0px !important; 
+body {
+	margin: 0 !important;
+	padding: 0 !important;
 }
 
- #intro span {
- 	/* Spans are dumb and need to be told what to do so they animate properly. */
- 	display: -moz-inline-stack;
- 	display: inline-block;
- 	*display: inline;
- }
+#main {
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	overflow-y: hidden;
+}
 
- #slider {
- 	margin-top: 0px !important;
- 	margin-bottom: 0px !important;
- }
+#main span {
+	/* Spans are dumb and need to be told what to do so they animate properly. */
+	display: -moz-inline-stack;
+	display: inline-block;
+	*display: inline;
+}
+
+#slider {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	width: 4000px;
+}
+
+#mountains1 {
+	padding-left: 2000px;
+	width: 1000px;
+}
+
+.intro {
+	text-align: center;
+	width: 700px;
+	padding-left: 200px;
+}
+
+.intro h1 {
+	padding-top:50%;
+}
+
+.sky {
+	/* This is the #main containing class */
+	background-color: #4eadcc;
+	height: 100%;
+}
+
+.grass_ph {
+	position:fixed;
+	bottom:0;
+	z-index:10;
+	width: 100%;
+	height: 15%;
+	background-color: #32a42c;
+}
+
+.mountain {
+}
+
+.mountain .sm {
+	z-index: 3;
+	background-color: #7d440c;
+	height: 25%;
+	width: 140px;
+}
+
+.mountain .md {
+	z-index: 2;
+	background-color: #be6812;
+	height: 50%;
+	width: 200px;
+}
+
+.mountain .lg {
+	z-index: 1;
+	background-color: #da7715;
+	height: 75%;
+	width: 260px;
+}
