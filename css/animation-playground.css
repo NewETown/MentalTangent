@@ -430,7 +430,7 @@
 	87% { -moz-transform: translateY(0px) scaleY(0.8); -moz-transform-origin: 50% 100%; -moz-animation-timing-function: ease-in; }
 }
 
-@-moz-keyframes backflip {
+@-o-keyframes backflip {
 	0%, 100% { -o-transform: translateY(0px) scaleY(1) rotate(0deg); -o-transform-origin: 50% 100%; }
 	30% { -o-transform: translateY(0px) scaleY(0.8) rotate(0deg); -o-transform-origin: 50% 100%; -o-animation-timing-function: ease-in; }
 	31% { -o-transform-origin: 50% 50%; }
@@ -491,4 +491,21 @@ span[class^="backflip-"]{
 	   -moz-animation-name: backflip;
 	     -o-animation-name: backflip;
 	        animation-name: backflip;
+}
+
+/* Ghost animations */
+@-moz-keyframes ghost_walk {
+	0%, 100% { -moz-transform: translateY(0px); animation-timing-function: ease-out; }
+	50% { -moz-transform: translateY(-20px); animation-timing-function: ease-out; }
+}
+
+.ghost_walk {
+	-webkit-animation-duration: 1s;
+	   -moz-animation-duration: 1s;
+	     -o-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-name: ghost_walk;
+	   -moz-animation-name: ghost_walk;
+	     -o-animation-name: ghost_walk;
+	        animation-name: ghost_walk;
 }

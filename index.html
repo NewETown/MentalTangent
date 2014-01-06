@@ -3,17 +3,29 @@
 	<title>The Playground</title>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="js/raphael-min.js"></script>
-	<script src="js/awesomation.js"></script>
 	<script src="js/divPeek.js"></script>
 	<script src="js/jquery.mousewheel.js"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/custom.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/animation-playground.css">
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+	  ga('create', 'UA-42403118-6', 'aliveandmodern.com');
+	  ga('send', 'pageview');
+
+	</script>
 </head>
 <body>
 	<div id="main" class="sky">
 		<div id="slider">
+			<div id="character">
+				<!-- This div will contain the character that we are animating today, 1/6/2014 -->
+			</div>
+
 			<div class="intro">
 				<h1><span id="m1" class="mental m1-anim">M</span><span id="e1" class="mental e1-anim">e</span><span id="n1" class="mental n1-anim">n</span><span id="t1" class="mental t1-anim">t</span><span id="a1" class="mental a1-anim">a</span><span id="l1" class="mental l1-anim">l</span> <span id="t2" class="tangent t2-anim">T</span><span id="a2" class="tangent a2-anim">a</span><span id="n2" class="tangent n2-anim">n</span><span id="g2" class="tangent g2-anim">g</span><span id="e2" class="tangent e2-anim">e</span><span id="n2" class="tangent n3-anim">n</span><span id="t2" class="tangent t3-anim">t</span></h1>
 
@@ -38,30 +50,20 @@
 
 		</div> <!-- /slider -->
 
-		<div class="grass_ph"></div>
+		<!-- <div class="grass_ph"></div> -->
 
 	</div>
-
-	<script src="js/cloud.js"></script>
+	<script src="js/awesomation.js"></script>
+	<!-- <script src="js/cloud.js"></script> -->
 	<script type="text/javascript">
-
-		// $('#main').sly({
-		// 	horizontal: 1,
-		// 	itemNav: 0,
-		// 	dragContent: 1,
-		// 	scrollBy: 20
-		// }); // ('#main', { itemNav: 0, horizontal: 1, scrollSource: '#main', dragSource: '#main', touchDragging: 1, releaseSwing: 1, swingSpeed: 0.2, scrollBar: '#scrollbar' }).init();
-
 		var playground = [$('#pP'), $('#pL'), $('#pA'), $("#pY"), $("#pG"), $("#pR"), $("#pO"), $("#pU"), $("#pN"), $("#pD")];
 		var backflips = ['backflip-0', 'backflip-1', 'backflip-2', 'backflip-3'];
 		// First we need to wait for the element to appear, then we can call random backflip ninja moves
 		var backflipCalls = 0;
 		function backflip() {
-			console.log("Backflippin");
 			var flipInterval = setInterval(function () {
 				var _holder = playground,
 				_num = null;
-				console.log(_holder.length);
 				for (var i = 0; i < 4; i++) {
 					_num = Math.floor(Math.random()*_holder.length);
 					$(_holder[_num]).addClass(backflips[i]);
@@ -70,16 +72,21 @@
 				backflipCalls++;
 				if(backflipCalls >= 4)
 					clearInterval(flipInterval);
-			}, 5000);
+			}, 4000);
 		}
 
 		backflip();
 
+		//var ghost_div = $('#character').css('padding-left');
+		//console.log('Ghost character padding left starts at: ' + ghost_div);
+
 		$("#main").mousewheel(function(event, delta) {
 
-	      this.scrollLeft -= (delta * 60);
-	    
-	      event.preventDefault();
+	    	this.scrollLeft -= (delta * 60);
+	    	//console.log(this.scrollLeft);
+	    	//ghost_div -= this.scrollLeft;
+	    	//$('#character').css('padding-left', ghost_div).
+	    	event.preventDefault();
 	    });
 	</script>
 </body>
