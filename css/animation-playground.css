@@ -508,4 +508,8 @@ span[class^="backflip-"]{
 	   -moz-animation-name: ghost_walk;
 	     -o-animation-name: ghost_walk;
 	        animation-name: ghost_walk;
+	/*-webkit-animation-iteration-count: infinite;
+	   -moz-animation-iteration-count: infinite;
+	     -0-animation-iteration-count: infinite;
+	     	animation-iteration-count: infinite;*/
 }

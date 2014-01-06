@@ -48,9 +48,9 @@
 
 			</div> -->
 
-		</div> <!-- /slider -->
+		</div> 
 
-		<!-- <div class="grass_ph"></div> -->
+		<div class="grass_ph"></div>
 
 	</div>
 	<script src="js/awesomation.js"></script>
@@ -77,15 +77,9 @@
 
 		backflip();
 
-		//var ghost_div = $('#character').css('padding-left');
-		//console.log('Ghost character padding left starts at: ' + ghost_div);
-
-		$("#main").mousewheel(function(event, delta) {
-
+		$('#main').mousewheel(function(event, delta) {
+			$('#character').toggleClass('ghost_walk');
 	    	this.scrollLeft -= (delta * 60);
-	    	//console.log(this.scrollLeft);
-	    	//ghost_div -= this.scrollLeft;
-	    	//$('#character').css('padding-left', ghost_div).
 	    	event.preventDefault();
 	    });
 	</script>

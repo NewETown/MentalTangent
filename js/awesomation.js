@@ -110,39 +110,78 @@
 // 			                'linear');
 // 			    });
 
-var ghostPaper = Raphael('character', 200, 200);
-var ghost = ghostPaper.set();
+$(document).ready(function() {
+	
+	var	prevX = 0, newX = 0;
 
-ghost.push(
-	ghostPaper.ellipse(20, 20, 15, 13)
+	var ghostPaper = Raphael('character', 200, 200);
+	var ghost = ghostPaper.set();
+	var eyes = ghostPaper.set();
+
+	var lEye = ghostPaper.ellipse(50, 50, 15, 13)
+			 .attr({
+			 	fill: '#fff',
+			 	'stroke-width': 0
+			 });
+	var rEye = ghostPaper.ellipse(110, 50, 15, 13)
 		 .attr({
 		 	fill: '#fff',
 		 	'stroke-width': 0
-		 }),
-	ghostPaper.ellipse(80, 20, 15, 13)
-		 .attr({
-		 	fill: '#fff',
-		 	'stroke-width': 0
-		 }),
-	ghostPaper.path("M21,70 C31,80 71,80 81,70") // "M<origin point> C<control for origin point> <control for close point> <close point>"
+		 });
+	var mouth = ghostPaper.path("M50,90 C50,110 110,110 110,90") // "M<origin point> C<control for origin point> <control for close point> <close point>"
 		.attr({
 			stroke: '#fff',
 			'stroke-width': 4
-		})
+		});
+
+	ghost.push(
+		lEye, rEye, mouth	
 	);
-ghost.attr({'id': 'ghost','name': 'ghost'});
 
-function up() {
-	ghost.animate({'transform': 'T0,-30'}, 500, down);
-}
+	eyes.push(
+		lEye, rEye
+	);
 
-function down() {
-	ghost.animate({'transform': 'T0,0'}, 500, up);
-}
+	ghost.attr({'id': 'ghost','name': 'ghost'});
 
-// $('#main').scroll(function() {
-// 	console.log("we're scrolling");
-// 	up();
-// })
+	// "Walking bob" animation set
+	function up() {
+		ghost.animate({'transform': 'T0,-20'}, 400, "easeIn", down);
+	}
 
-up();
+	function down() {
+		ghost.animate({'transform': 'T0,0'}, 400, "easeOut");
+	}
+
+	// Directional looking set of animations
+	function lookRight() {
+		eyes.animate({'transform': 'T25,0'}, 400, center);
+	}
+
+	function lookLeft() {
+		eyes.animate({'transform': 'T-25, 0'}, 400, center);
+	}
+
+	function center() {
+		eyes.animate({'transform': 'T0,0'}, 400);
+	}
+
+	// This is where we call the animations based on the actions of the user
+	$("#main").mousewheel(function(event) {
+		
+    	newX = this.scrollLeft;
+
+		console.log("Previous x: " + prevX);
+		console.log("New x: " + newX);
+
+		if (newX > prevX)
+			lookRight();
+		else
+			lookLeft();
+
+		prevX = newX;
+
+		// up();
+	});
+
+});

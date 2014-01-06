@@ -11,9 +11,9 @@ body {
 }
 
 #character {
-	position: absolute;
+	position: fixed;
 	padding-left: 900px;
-	padding-top: 750px;
+	padding-top: 650px;
 }
 
 #main {
