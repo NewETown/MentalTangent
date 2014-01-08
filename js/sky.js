@@ -47,10 +47,10 @@ $(document).ready(function() {
 
 			// Now we update the X and Y positions for the next ellipse
 			if(i%2 == 0) {
-				xPos -= xOffset * .75; // Math.floor(Math.random() * xOffset) + (xOffset * .35);
-				yPos += yOffset * .8; // Math.floor(Math.random() * yOffset) + (yOffset * .75) * -1;
+				xPos -= xOffset * .75;
+				yPos += yOffset * .8;
 			} else {
-				xPos += xOffset * 1.5; // Math.floor(Math.random() * xOffset) + (xOffset * .35);
+				xPos += xOffset * 1.5;
 				yPos += yOffset * .2;
 			}
 
