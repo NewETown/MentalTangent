@@ -28,18 +28,17 @@
 <body>
 	<div id="main" class="sky">
 		<div id="slider">
-			<div id="character">
-				<!-- This div will contain the character that we are animating today, 1/6/2014 -->
+			<div id="sky"></div>
+			<div id="ghost">
+				<!-- This div will contain the ghost that we are animating today, 1/6/2014 -->
 			</div>
 
 			<div class="intro">
 				<h1><span id="m1" class="mental m1-anim">M</span><span id="e1" class="mental e1-anim">e</span><span id="n1" class="mental n1-anim">n</span><span id="t1" class="mental t1-anim">t</span><span id="a1" class="mental a1-anim">a</span><span id="l1" class="mental l1-anim">l</span> <span id="t2" class="tangent t2-anim">T</span><span id="a2" class="tangent a2-anim">a</span><span id="n2" class="tangent n2-anim">n</span><span id="g2" class="tangent g2-anim">g</span><span id="e2" class="tangent e2-anim">e</span><span id="n2" class="tangent n3-anim">n</span><span id="t2" class="tangent t3-anim">t</span></h1>
 
 				<p id="welcome" style="padding-top:25px;" class="welcome welcome-fade">Welcome to my <span id="pP">p</span><span id="pL">l</span><span id="pA">a</span><span id="pY">y</span><span id="pG">g</span><span id="pR">r</span><span id="pO">o</span><span id="pU">u</span><span id="pN">n</span><span id="pD">d</span>.</p>
-				<p>This page is constantly a work in progress. If you visit one day and everything is broken try back soon, I'm likely in the middle of fixing it or testing new ideas :).</p>
+				<p  class="welcome welcome-fade">This page is constantly a work in progress. If you visit one day and everything is broken try back soon, I'm likely in the middle of fixing it or testing new ideas :).</p>
 			</div>
-
-			<div id="clouds"></div>
 
 			<div id="mountains1">
 				<!-- First mountain scene -->
@@ -60,7 +59,8 @@
 		<div class="grass_ph"></div>
 
 	</div>
-	<script src="js/awesomation.js"></script>
+	<script src="js/ghost.js"></script>
+	<script src="js/sky.js"></script>
 	<!-- <script src="js/cloud.js"></script> -->
 	<script type="text/javascript">
 		var playground = [$('#pP'), $('#pL'), $('#pA'), $("#pY"), $("#pG"), $("#pR"), $("#pO"), $("#pU"), $("#pN"), $("#pD")];
@@ -85,7 +85,7 @@
 		backflip();
 
 		$('#main').mousewheel(function(event, delta) {
-			$('#character').toggleClass('ghost_walk');
+			$('#ghost').toggleClass('ghost_walk');
 	    	this.scrollLeft -= (delta * 60);
 	    	event.preventDefault();
 	    });

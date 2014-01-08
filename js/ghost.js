@@ -1,3 +1,70 @@
+$(document).ready(function() {
+	
+	var	prevX = 0, newX = 0;
+
+	var ghostPaper = Raphael('ghost', 200, 200);
+	var ghost = ghostPaper.set();
+	var eyes = ghostPaper.set();
+
+	var lEye = ghostPaper.ellipse(50, 50, 15, 13)
+			 .attr({
+			 	fill: '#fff',
+			 	'stroke-width': 0
+			 });
+	var rEye = ghostPaper.ellipse(110, 50, 15, 13)
+		 .attr({
+		 	fill: '#fff',
+		 	'stroke-width': 0
+		 });
+	var mouth = ghostPaper.path("M50,90 C50,95 110,95 110,90") // "M<origin point> C<control for origin point> <control for close point> <close point>"
+		.attr({
+			stroke: '#fff',
+			'stroke-width': 4
+		});
+
+	ghost.push(
+		lEye, rEye, mouth	
+	);
+
+	eyes.push(
+		lEye, rEye
+	);
+
+	// Directional looking set of animations
+	function lookRight() {
+		eyes.animate({'transform': 'T10,0'}, 300, center); 				// Animates the eyes
+		mouth.animate({'path': 'M55,90 C50,95 110,95 110,90'}, 300); 	// Animates the mouth
+	}
+
+	function lookLeft() {
+		eyes.animate({'transform': 'T-10, 0'}, 300, center); 			// Animates the eyes
+		mouth.animate({'path': 'M50,90 C50,95 110,95 105,90'}, 300); 	// Animates the mouth
+	}
+
+	function center() {
+		eyes.animate({'transform': 'T0,0'}, 300);
+		mouth.animate({'path': 'M50,90 C50,95 110,95 110,90'}, 300);
+	}
+
+	// This is where we call the animations based on the actions of the user
+	$("#main").mousewheel(function(event) {
+
+    	newX = this.scrollLeft;
+
+		console.log("Previous x: " + prevX);
+		console.log("New x: " + newX);
+
+		if (newX > prevX)
+			lookRight();
+		else if (newX < prevX)
+			lookLeft();
+
+		prevX = newX;
+
+	});
+
+});
+
 // var p = new Raphael(0, 0, 400, 400);
 // p.rect(0, 0, 400, 400);
 
@@ -109,82 +176,3 @@
 // 			                1500,
 // 			                'linear');
 // 			    });
-
-$(document).ready(function() {
-	
-	var	prevX = 0, newX = 0;
-
-	var ghostPaper = Raphael('character', 200, 200);
-	var ghost = ghostPaper.set();
-	var eyes = ghostPaper.set();
-
-	var lEye = ghostPaper.ellipse(50, 50, 15, 13)
-			 .attr({
-			 	fill: '#fff',
-			 	'stroke-width': 0
-			 });
-	var rEye = ghostPaper.ellipse(110, 50, 15, 13)
-		 .attr({
-		 	fill: '#fff',
-		 	'stroke-width': 0
-		 });
-	var mouth = ghostPaper.path("M50,90 C50,95 110,95 110,90") // "M<origin point> C<control for origin point> <control for close point> <close point>"
-		.attr({
-			stroke: '#fff',
-			'stroke-width': 4
-		});
-
-	ghost.push(
-		lEye, rEye, mouth	
-	);
-
-	eyes.push(
-		lEye, rEye
-	);
-
-	// ghost.attr({'id': 'ghost','name': 'ghost'});
-
-	// "Walking bob" animation set - now handled in animation-playground.css
-	// function up() {
-	// 	ghost.animate({'transform': 'T0,-20'}, 400, "easeIn", down);
-	// }
-
-	// function down() {
-	// 	ghost.animate({'transform': 'T0,0'}, 400, "easeOut");
-	// }
-
-	// Directional looking set of animations
-	function lookRight() {
-		eyes.animate({'transform': 'T10,0'}, 300, center); 				// Animates the eyes
-		mouth.animate({'path': 'M55,90 C50,95 110,95 110,90'}, 300); 	// Animates the mouth
-	}
-
-	function lookLeft() {
-		eyes.animate({'transform': 'T-10, 0'}, 300, center); 			// Animates the eyes
-		mouth.animate({'path': 'M50,90 C50,95 110,95 105,90'}, 300); 	// Animates the mouth
-	}
-
-	function center() {
-		eyes.animate({'transform': 'T0,0'}, 300);
-		mouth.animate({'path': 'M50,90 C50,95 110,95 110,90'}, 300);
-	}
-
-	// This is where we call the animations based on the actions of the user
-	$("#main").mousewheel(function(event) {
-
-    	newX = this.scrollLeft;
-
-		console.log("Previous x: " + prevX);
-		console.log("New x: " + newX);
-
-		if (newX > prevX)
-			lookRight();
-		else
-			lookLeft();
-
-		prevX = newX;
-
-		// up(); Doing the Up and Down animation in animation-playground.css
-	});
-
-});

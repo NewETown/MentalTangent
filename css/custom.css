@@ -10,12 +10,6 @@ body {
 	padding: 0 !important;
 }
 
-#character {
-	position: fixed;
-	padding-left: 900px;
-	padding-top: 650px;
-}
-
 #main {
 	padding-top: 0px !important;
 	padding-bottom: 0px !important;
@@ -27,6 +21,18 @@ body {
 	display: -moz-inline-stack;
 	display: inline-block;
 	*display: inline;
+}
+
+#ghost {
+	position: fixed;
+	padding-left: 900px;
+	padding-top: 450px;
+}
+
+#clouds {
+	position: fixed;
+	top: 0;
+	margin-top: 0;
 }
 
 #slider {
@@ -41,13 +47,11 @@ body {
 }
 
 .intro {
+	position: relative;
 	text-align: center;
 	width: 700px;
 	padding-left: 200px;
-}
-
-.intro h1 {
-	padding-top:50%;
+	z-index: 10;
 }
 
 .sky {
@@ -63,9 +67,6 @@ body {
 	width: 100%;
 	height: 15%;
 	background-color: #32a42c;
-}
-
-.mountain {
 }
 
 .mountain .sm {
