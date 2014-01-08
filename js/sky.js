@@ -54,7 +54,7 @@ $(document).ready(function() {
 				yPos += yOffset * .2;
 			}
 
-			console.log("X at " + i + " is " + xPos);
+			// console.log("X at " + i + " is " + xPos);
 
 			// Then change the size of the next ellipse
 			yOffset = Math.max(yOffset * (Math.random() + .1), yOffset * .75);

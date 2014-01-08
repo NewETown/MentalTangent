@@ -46,12 +46,47 @@ body {
 	width: 1000px;
 }
 
-.intro {
+#intro {
 	position: relative;
 	text-align: center;
 	width: 700px;
 	padding-left: 200px;
 	z-index: 10;
+	float: left;
+	margin-top: -100px;
+}
+
+#skillSection {
+	position: relative;
+	width: 1000px;
+	height: 600px;
+	margin-left: 1500px;
+	z-index: 10;
+	margin-top: -100px;
+}
+
+#skillSection div {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+}
+
+#web {
+
+}
+
+#prog {
+	margin-left: 50%;
+	padding-left: 75px;
+}
+
+#devEnv {
+	margin-top: 30%;
+}
+
+#other {
+	margin: 30% 0% 0% 50%;
+	padding-left: 75px;
 }
 
 .sky {
@@ -88,4 +123,8 @@ body {
 	background-color: #da7715;
 	height: 75%;
 	width: 260px;
+}
+
+#skillVals {
+	display: none;
 }

@@ -4,7 +4,7 @@
 	<title>Mental Tangent: My Playground</title>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="js/raphael-min.js"></script>
-	<script src="js/divPeek.js"></script>
+	<!-- <script src="js/divPeek.js"></script> -->
 	<script src="js/jquery.mousewheel.js"></script>
 	<meta property="og:title" content="Mental Tangent" />
 	<meta property="og:type" content="website" />
@@ -23,16 +23,19 @@
 				<!-- This div will contain the ghost that we are animating today, 1/6/2014 -->
 			</div>
 
-			<div class="intro">
+			<div id="intro">
 				<h1><span id="m1" class="mental m1-anim">M</span><span id="e1" class="mental e1-anim">e</span><span id="n1" class="mental n1-anim">n</span><span id="t1" class="mental t1-anim">t</span><span id="a1" class="mental a1-anim">a</span><span id="l1" class="mental l1-anim">l</span> <span id="t2" class="tangent t2-anim">T</span><span id="a2" class="tangent a2-anim">a</span><span id="n2" class="tangent n2-anim">n</span><span id="g2" class="tangent g2-anim">g</span><span id="e2" class="tangent e2-anim">e</span><span id="n2" class="tangent n3-anim">n</span><span id="t2" class="tangent t3-anim">t</span></h1>
 
 				<p id="welcome" style="padding-top:25px;" class="welcome welcome-fade">Welcome to my <span id="pP">p</span><span id="pL">l</span><span id="pA">a</span><span id="pY">y</span><span id="pG">g</span><span id="pR">r</span><span id="pO">o</span><span id="pU">u</span><span id="pN">n</span><span id="pD">d</span>.</p>
 				<p  class="welcome welcome-fade">This page is constantly a work in progress. If you visit one day and everything is broken try back soon, I'm likely in the middle of fixing it or testing new ideas.</p>
 			</div>
 
-			<div id="mountains1">
-				<!-- First mountain scene -->
-				<div id="mountainCanvas"></div>
+			<div id="skillSection">
+				<!-- Cool skill charts representing programming skills -->
+				<div id="web"></div>
+				<div id="prog"></div>
+				<div id="devEnv"></div>
+				<div id="other"></div>
 			</div>
 
 			<!-- <div id="mapHolder" style="position: relative; left: 1000px; top:-300px;">
@@ -49,7 +52,95 @@
 		<div class="grass_ph"></div>
 
 	</div>
+
+	<div id="skillVals">
+		<div id="webSkills">
+			<div class="arc">
+				<span class="text">JavaScript</span>
+				<input type="hidden" class="percent" value="90" />
+				<input type="hidden" class="color" value="#3d5687" />
+			</div>
+			<div class="arc">
+				<span class="text">JQuery</span>
+				<input type="hidden" class="percent" value="75" />
+				<input type="hidden" class="color" value="#34325c" />
+			</div>
+			<div class="arc">
+				<span class="text">HTML</span>
+				<input type="hidden" class="percent" value="95" />
+				<input type="hidden" class="color" value="#282830" />
+			</div>
+			<div class="arc">
+				<span class="text">CSS</span>
+				<input type="hidden" class="percent" value="80" />
+				<input type="hidden" class="color" value="#5d3863" />
+			</div>
+			<div class="arc">
+				<span class="text">PHP</span>
+				<input type="hidden" class="percent" value="70" />
+				<input type="hidden" class="color" value="#ad7994" />
+			</div>
+			<div class="arc">
+				<span class="text">MySQL</span>
+				<input type="hidden" class="percent" value="65" />
+				<input type="hidden" class="color" value="#cd3431" />
+			</div>
+		</div>
+		<div id="progSkills">
+			<div class="arc">
+				<span class="text">C#</span>
+				<input type="hidden" class="percent" value="90" />
+				<input type="hidden" class="color" value="#3d5687" />
+			</div>
+			<div class="arc">
+				<span class="text">C++</span>
+				<input type="hidden" class="percent" value="70" />
+				<input type="hidden" class="color" value="#34325c" />
+			</div>
+			<div class="arc">
+				<span class="text">Java</span>
+				<input type="hidden" class="percent" value="60" />
+				<input type="hidden" class="color" value="#282830" />
+			</div>
+		</div>
+		<div id="devEnvSkills">
+			<div class="arc">
+				<span class="text">Sublime Text</span>
+				<input type="hidden" class="percent" value="95" />
+				<input type="hidden" class="color" value="#3d5687" />
+			</div>
+			<div class="arc">
+				<span class="text">Visual Studio 2013</span>
+				<input type="hidden" class="percent" value="90" />
+				<input type="hidden" class="color" value="#34325c" />
+			</div>
+			<div class="arc">
+				<span class="text">Eclipse</span>
+				<input type="hidden" class="percent" value="70" />
+				<input type="hidden" class="color" value="#282830" />
+			</div>
+		</div>
+		<div id="otherSkills">
+			<div class="arc">
+				<span class="text">Azure</span>
+				<input type="hidden" class="percent" value="80" />
+				<input type="hidden" class="color" value="#3d5687" />
+			</div>
+			<div class="arc">
+				<span class="text">XAMPP</span>
+				<input type="hidden" class="percent" value="95" />
+				<input type="hidden" class="color" value="#34325c" />
+			</div>
+			<div class="arc">
+				<span class="text">Inkscape</span>
+				<input type="hidden" class="percent" value="65" />
+				<input type="hidden" class="color" value="#282830" />
+			</div>
+		</div>
+	</div>
+
 	<script src="js/ghost.js"></script>
+	<script src="js/skillCharts.js"></script>
 	<script src="js/sky.js"></script>
 	<!-- <script src="js/cloud.js"></script> -->
 	<script type="text/javascript">
