@@ -4,6 +4,7 @@
 $(document).ready(function() {
 	var documentWidth = $('#slider').width();
 	var skyHeight = $(window).height() * .3;
+	var maxCloudDraws = 0;
 
 	// console.log("The viewport width is: " + documentWidth); - Checked! This gives us the correct value
 
@@ -81,6 +82,15 @@ $(document).ready(function() {
 		}
 	}
 
-	setInterval(drawClouds, 8500);
+	function initiateClouds() {
+		var dCloud = setInterval(function() {
+			drawClouds();
+			maxCloudDraws++;
+			if(maxCloudDraws >= 4)
+				clearInterval(dCloud);
+		}, 8500);
+	}
+
+	initiateClouds();
 
 });
