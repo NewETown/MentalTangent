@@ -8,6 +8,7 @@
 body {
 	margin: 0 !important;
 	padding: 0 !important;
+	color: #fff; 
 }
 
 #main {
@@ -39,12 +40,7 @@ body {
 #slider {
 	margin-top: 0px !important;
 	margin-bottom: 0px !important;
-	width: 4000px;
-}
-
-#mountains1 {
-	padding-left: 2000px;
-	width: 1000px;
+	width: 5500px;
 }
 
 #intro {
@@ -73,7 +69,6 @@ body {
 }
 
 #web {
-
 }
 
 #prog {
@@ -132,4 +127,36 @@ body {
 
 .faded {
 	opacity: .2;
+}
+
+#otherProjects {
+	position: relative;
+	background-color: rgba(122, 120, 120, .3);
+	margin-left: 3000px;
+	margin-top: -500px;
+	width: 800px;
+	height: auto; /* Set to Auto after we have content? */
+	z-index: 10;
+	padding: 5px 5px 15px 5px;
+	font-size: 24px;
+}
+
+#contact {
+	position: relative;
+	background-color: rgba(122, 120, 120, .3);
+	margin-left: 4200px;
+	margin-top: -300px;
+	width: 800px;
+	height: auto; /* Set to Auto after we have content? */
+	z-index: 10;
+	padding: 5px 5px 15px 5px;
+}
+
+#contact a, #otherProjects a {
+	color: #bb5a58;
+}
+
+.customContainer {
+	padding-left: 10%;
+	width: 90%;
 }
