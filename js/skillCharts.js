@@ -11,12 +11,12 @@ var o = {
 
 		var speed = 250;
 
-		var r = Raphael(elemId, 500, 300),
-			rad = 60;
+		var r = Raphael(elemId, 500, 350),
+			rad = 55;
 
-		r.circle(250, 150, 60).attr({ stroke: 'none', fill: '#193340' });
+		r.circle(250, 170, 60).attr({ stroke: 'none', fill: '#193340' });
 
-		var title = r.text(250, 150, name).attr({
+		var title = r.text(250, 170, name).attr({
 			font: '20px Arial',
 			fill: '#fff'
 		}).toFront();
@@ -28,9 +28,9 @@ var o = {
 				a = (random - alpha) * Math.PI/180,
 				b = random * Math.PI/180,
 				sx = 250 + rad * Math.cos(b),
-				sy = 150 - rad * Math.sin(b),
+				sy = 170 - rad * Math.sin(b),
 				x = 250 + rad * Math.cos(a),
-				y = 150 - rad * Math.sin(a),
+				y = 170 - rad * Math.sin(a),
 				path = [['M', sx, sy], ['A', rad, rad, 0, +(alpha > 180), 1, x, y]];
 			return { path: path, stroke: color }
 		}
@@ -40,17 +40,17 @@ var o = {
 				color = t.find('.color').val(),
 				value = t.find('.percent').val(),
 				text = t.find('.text').text();
-			rad += 10;
+			rad += 15;
 
-			var z = r.path().attr({arc: [value, color, rad], 'stroke-width': 10 });
+			var z = r.path().attr({arc: [value, color, rad], 'stroke-width': 20 });
 
 			z.mouseover(function() {
-				this.animate({'stroke-width': 20, opacity: .75 }, 1000, 'elastic');
+				this.animate({'stroke-width': 25, opacity: .75 }, 1000, 'elastic');
 				title.animate({opacity: 0}, speed, '>', function() {
 					this.attr({text: text + '\n' + value + '%' }).animate({opacity: 1}, speed, '<');
 				});
 			}).mouseout(function() {
-				this.stop().animate({'stroke-width': 12, opacity: 1 }, 1000, 'elastic');
+				this.stop().animate({'stroke-width': 20, opacity: 1 }, 1000, 'elastic');
 				title.stop().animate({opacity: 0}, speed, '>', function() {
 					title.attr({ text: name}).animate({opacity: 1}, speed, '<');
 				});

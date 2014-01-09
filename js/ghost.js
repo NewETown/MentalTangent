@@ -51,9 +51,6 @@ $(document).ready(function() {
 
     	newX = this.scrollLeft;
 
-		console.log("Previous x: " + prevX);
-		console.log("New x: " + newX);
-
 		if (newX > prevX)
 			lookRight();
 		else if (newX < prevX)

@@ -523,8 +523,36 @@ span[class^="backflip-"]{
 	   -moz-animation-name: ghost_walk;
 	     -o-animation-name: ghost_walk;
 	        animation-name: ghost_walk;
-	/*-webkit-animation-iteration-count: infinite;
-	   -moz-animation-iteration-count: infinite;
-	     -0-animation-iteration-count: infinite;
-	     	animation-iteration-count: infinite;*/
+}
+
+/* fade_in animation for charts */
+@-webkit-keyframes fade_in {
+	0% { opacity: .2; }
+	100% { opacity: 1; -webkit-animation-timing-function: ease-in; }
+}
+
+@-moz-keyframes fade_in {
+	0% { opacity: .2; }
+	100% { opacity: 1; -moz-animation-timing-function: ease-in; }
+}
+
+@-o-keyframes fade_in {
+	0% { opacity: .2; }
+	100% { opacity: 1; -o-animation-timing-function: ease-in; }
+}
+
+@keyframes fade_in {
+	0% { opacity: .2; }
+	100% { opacity: 1; animation-timing-function: ease-in; }
+}
+
+.fade_in {
+	-webkit-animation-duration: 1.2s;
+	   -moz-animation-duration: 1.2s;
+	     -o-animation-duration: 1.2s;
+	        animation-duration: 1.2s;
+	-webkit-animation-name: fade_in;
+	   -moz-animation-name: fade_in;
+	     -o-animation-name: fade_in;
+	        animation-name: fade_in;
 }

@@ -25,8 +25,9 @@ body {
 
 #ghost {
 	position: fixed;
-	padding-left: 900px;
-	padding-top: 450px;
+	margin-left: 900px;
+	margin-top: 450px;
+	z-index: 15;
 }
 
 #clouds {
@@ -127,4 +128,8 @@ body {
 
 #skillVals {
 	display: none;
+}
+
+.faded {
+	opacity: .2;
 }
