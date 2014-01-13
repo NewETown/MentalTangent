@@ -1,25 +1,58 @@
 $(document).ready(function() {
 	
 	var	prevX = 0, newX = 0;
+	var centerX = $(window).width() / 2;
+	var centerY = $(window).height() / 2;
+	// console.log("Center x: " + centerX);
+	// console.log("Center y: " + centerY);
+	$('#ghost').css('margin-left', centerX - 70);
 
-	var ghostPaper = Raphael('ghost', 200, 200);
+	var ghostSize;
+	// if (centerX <= 490 || centerY <= 300) {
+	// 	$('#ghost').css('margin-top', (centerY * .8));
+	// 	ghostSize = "S.6, .6, 0, 0";
+	// }
+	// else {
+	// 	$('#ghost').css('margin-top', (centerY * .9));
+	// 	ghostSize = "S1, 1, 0, 0";
+	// }
+
+	if (centerX <= 640) {
+		if (centerY <= 320) {
+			$('#ghost').css('margin-top', (centerY * .8));
+			ghostSize = "S.6, .6, 0, 0";
+			$('#ghost').css('margin-left', centerX - 45);
+		} else {
+			$('#ghost').css('margin-top', (centerY * .8));
+			ghostSize = "S1, 1, 0, 0";
+		}
+	} else {
+		$('#ghost').css('margin-top', (centerY * .9));
+		ghostSize = "S1, 1, 0, 0";
+	}
+
+	var ghostPaper = Raphael('ghost', 140, 110); // (divId, width, height)
 	var ghost = ghostPaper.set();
 	var eyes = ghostPaper.set();
 
-	var lEye = ghostPaper.ellipse(50, 50, 15, 13)
+	// The following code draws the images for the ghost
+	var lEye = ghostPaper.ellipse(50, 50, 15, 13) // (x, y, rX, rY)
 			 .attr({
 			 	fill: '#fff',
-			 	'stroke-width': 0
+			 	'stroke-width': 0,
+			 	transform: ghostSize
 			 });
 	var rEye = ghostPaper.ellipse(110, 50, 15, 13)
 		 .attr({
 		 	fill: '#fff',
-		 	'stroke-width': 0
+		 	'stroke-width': 0,
+		 	transform: ghostSize
 		 });
 	var mouth = ghostPaper.path("M50,90 C50,95 110,95 110,90") // "M<origin point> C<control for origin point> <control for close point> <close point>"
 		.attr({
 			stroke: '#fff',
-			'stroke-width': 4
+			'stroke-width': 4,
+			transform: ghostSize
 		});
 
 	ghost.push(
@@ -32,17 +65,17 @@ $(document).ready(function() {
 
 	// Directional looking set of animations
 	function lookRight() {
-		eyes.animate({'transform': 'T10,0'}, 300, center); 				// Animates the eyes
+		eyes.animate({'transform': 'T10,0'+ghostSize}, 300, center); 				// Animates the eyes
 		mouth.animate({'path': 'M55,90 C50,95 110,95 110,90'}, 300); 	// Animates the mouth
 	}
 
 	function lookLeft() {
-		eyes.animate({'transform': 'T-10, 0'}, 300, center); 			// Animates the eyes
+		eyes.animate({'transform': 'T-10, 0'+ghostSize}, 300, center); 			// Animates the eyes
 		mouth.animate({'path': 'M50,90 C50,95 110,95 105,90'}, 300); 	// Animates the mouth
 	}
 
 	function center() {
-		eyes.animate({'transform': 'T0,0'}, 300);
+		eyes.animate({'transform': 'T0,0'+ghostSize}, 300);
 		mouth.animate({'path': 'M50,90 C50,95 110,95 110,90'}, 300);
 	}
 

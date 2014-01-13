@@ -9,14 +9,32 @@ var o = {
 
 	diagram: function(elemId, name) {
 
-		var speed = 250;
+		// Figure out the size to display the charts at
+		// Each chart needs to scale with viewport size
+		var win_height = $(window).height();
+		var win_width = $(window).width();
+		// Set x and y base to be half of the containing div
+		var x_base = 250; // Original base was 250
+		var y_base = 170; // Original base was 170
+
+		var rad = 55;
+		var speed = 250; // Represents the speed of the animations in ms
+
+		if (win_width <= 360)
+			return; // We won't render the charts so there's no use in drawing them
+		else if (win_height <= 980) {
+			x_base = $('#web').width() / 2;
+			y_base = $('#web').height() / 2;
+			rad = 15;
+		}
 
 		var r = Raphael(elemId, 500, 350),
-			rad = 55;
+			rad;
 
-		r.circle(250, 170, 60).attr({ stroke: 'none', fill: '#193340' });
+		// The circle gets an x and y center point
+		r.circle(x_base, y_base, rad).attr({ stroke: 'none', fill: '#193340' });
 
-		var title = r.text(250, 170, name).attr({
+		var title = r.text(x_base, y_base, name).attr({
 			font: '20px Arial',
 			fill: '#fff'
 		}).toFront();
@@ -27,10 +45,10 @@ var o = {
 				random = 180, //o.random(91, 240),
 				a = (random - alpha) * Math.PI/180,
 				b = random * Math.PI/180,
-				sx = 250 + rad * Math.cos(b),
-				sy = 170 - rad * Math.sin(b),
-				x = 250 + rad * Math.cos(a),
-				y = 170 - rad * Math.sin(a),
+				sx = x_base + rad * Math.cos(b),
+				sy = y_base - rad * Math.sin(b),
+				x = x_base + rad * Math.cos(a),
+				y = y_base - rad * Math.sin(a),
 				path = [['M', sx, sy], ['A', rad, rad, 0, +(alpha > 180), 1, x, y]];
 			return { path: path, stroke: color }
 		}
