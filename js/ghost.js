@@ -23,11 +23,11 @@ $(document).ready(function() {
 			ghostSize = "S.6, .6, 0, 0";
 			$('#ghost').css('margin-left', centerX - 45);
 		} else {
-			$('#ghost').css('margin-top', (centerY * .8));
+			$('#ghost').css('margin-top', (centerY * .75));
 			ghostSize = "S1, 1, 0, 0";
 		}
 	} else {
-		$('#ghost').css('margin-top', (centerY * .9));
+		$('#ghost').css('margin-top', (centerY * .85));
 		ghostSize = "S1, 1, 0, 0";
 	}
 

@@ -25,19 +25,16 @@ var o = {
 		else if (win_height <= 980) {
 			x_base = $('#web').width() / 2;
 			y_base = $('#web').height() / 2;
-			rad = 15;
+			rad = 45;
 		}
 
-		var r = Raphael(elemId, 500, 350),
+		var r = Raphael(elemId, 500, 400),
 			rad;
 
 		// The circle gets an x and y center point
 		r.circle(x_base, y_base, rad).attr({ stroke: 'none', fill: '#193340' });
 
-		var title = r.text(x_base, y_base, name).attr({
-			font: '20px Arial',
-			fill: '#fff'
-		}).toFront();
+		var title;
 
 		r.customAttributes.arc = function(value, color, rad) {
 			var v = 3.6 * value,
@@ -74,6 +71,11 @@ var o = {
 				});
 			});
 
+		});
+
+		title = r.text(x_base, y_base, name).attr({
+			font: '20px Arial',
+			fill: '#fff'
 		});
 	}
 }

@@ -44,7 +44,7 @@ body {
 #slider {
 	margin-top: 0px !important;
 	margin-bottom: 0px !important;
-	width: 5500px;
+	width: 5000px;
 	height: 1000px;
 }
 
@@ -53,6 +53,7 @@ body {
 	text-align: center;
 	width: 700px;
 	margin-left: 50px;
+	margin-right: -100px;
 	z-index: 10;
 	float: left;
 }
@@ -62,35 +63,35 @@ body {
 }
 
 #skillSection {
+	display: inline-block;
 	position: relative;
-	width: 1000px;
-	height: 600px;
-	margin-left: 1500px;
+	width: 2000px;
+	height: 500px;
+	margin-left: 200px;
 	z-index: 10;
-	margin-top: -100px;
 }
 
 #skillSection div {
 	position: absolute;
-	width: 50%;
-	height: 50%;
+	width: 25%;
+	height: 100%;
+	padding-left: 25px;
 }
 
 #web {
+	margin-left: 0%;
 }
 
 #prog {
-	margin-left: 50%;
-	padding-left: 75px;
+	margin-left: 25%;
 }
 
 #devEnv {
-	margin-top: 30%;
+	margin-left: 50%;
 }
 
 #other {
-	margin: 30% 0% 0% 50%;
-	padding-left: 75px;
+	margin-left: 75%;
 }
 
 .sky {
@@ -126,17 +127,15 @@ body {
 #otherProjects {
 	position: relative;
 	margin-left: 3000px;
-	margin-top: -500px;
 	width: 800px;
 	z-index: 10;
 	padding: 5px 5px 15px 5px;
-	font-size: 24px;
 }
 
 #contact {
 	position: relative;
-	margin-left: 4200px;
-	margin-top: -300px;
+	margin-left: 4050px;
+	margin-top: -275px;
 	width: 800px;
 	z-index: 10;
 }
@@ -153,22 +152,9 @@ body {
 /* default styles here for older browsers. 
    I tend to go for a 600px - 960px width max but using percentages
 */
-
-@media only screen and (max-width: 360px) {
-	#slider {
-		width: 360px;
-	}
-
-	.micro_screen {
-		display: block;
-	}
-
-	.micro_screen h1 {
-		text-align: center;
-	}
-
-	#intro, #skillSection, #otherProjects, #contact {
-		display: none;
+@media only screen and (max-height: 1200px) { /* min-height <= 1200 */
+	#otherProjects {
+		margin-top: -500px;
 	}
 }
 
@@ -194,34 +180,45 @@ body {
 }
 
 @media only screen and (max-height: 720px) {
+	#slider {
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+		width: 4850px;
+		height: 1000px;
+	}
+
 	#intro {
-		margin-top: -100px;
+		margin-top: -50px;
 	}
+
 	#skillSection {
-		margin-top: -200px;
+		margin-top: -150px;
+	}
+
+	#otherProjects {
+		margin-top: -400px;
+		margin-left: 2925px;
+	}
+
+	#contact {
+		margin-left: 3925px;
 	}
 }
 
-@media only screen and (min-width:960px){
-    /* styles for browsers larger than 960px; */
-}
-@media only screen and (min-width:1440px){
-    /* styles for browsers larger than 1440px; */
-}
-@media only screen and (min-width:2000px){
-    /* for sumo sized (mac) screens */
-}
-@media only screen and (max-device-width:480px){
-   /* styles for mobile browsers smaller than 480px; (iPhone) */
-}
-@media only screen and (device-width:768px){
-   /* default iPad screens */
-}
-/* different techniques for iPad screening */
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
-  /* For portrait layouts only */
-}
+@media only screen and (max-width: 360px) {
+	#slider {
+		width: 360px;
+	}
 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-  /* For landscape layouts only */
+	.micro_screen {
+		display: block;
+	}
+
+	.micro_screen h1 {
+		text-align: center;
+	}
+
+	#intro, #skillSection, #otherProjects, #contact {
+		display: none;
+	}
 }
