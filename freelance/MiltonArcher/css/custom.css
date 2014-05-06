@@ -111,6 +111,10 @@ footer p:last-child {
 	background-repeat: none;
 }
 
+.first-merch {
+	margin-left:13%;
+}
+
 @media(max-width: 720px) {
 	.parallax {
 		display: none;
@@ -118,5 +122,9 @@ footer p:last-child {
 
 	.mobile-header {
 		display: inherit;
+	}
+
+	.first-merch {
+		margin-left: inherit;
 	}
 }
