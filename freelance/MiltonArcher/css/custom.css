@@ -106,3 +106,9 @@ footer p:last-child {
 	background-image: none;
 	background-repeat: none;
 }
+
+@media(max-width: 600px) {
+	.parallax {
+		display: none;
+	}
+}

@@ -12,7 +12,7 @@
 
 <!-- 100% hero image -->
 	<!-- TBN_packshot.jpg -->
-	<div class="parallax" data-image="img/hero-background.jpg" data-width="1444" data-height="763" style="height:763px;">
+	<div class="parallax" data-image="img/hero-background.jpg" data-width="1444" data-height="1074" style="height:763px;">
 		<div class="text-center" style="position: relative; padding-top:395px; margin-left:-45%; display:block;">
 			<img src="img/tokyo_logo.png" style="max-width: 400px;">
 			<br>
@@ -25,11 +25,12 @@
 		<div class="bottom-center glyphicon glyphicon-chevron-down"></div>
 	</div>
 
-	<div class="row row-border" style="min-height:1028px;">
+	<div class="row row-border" style="padding-top: 40px; padding-bottom: 40px;">
 		<div class="text-center">
 			<h2>TOUR DATES</h2>
 		</div>
-		<div id="tour-dates" class="col-sm-offset-3 col-sm-6">
+		<div class="row">
+			<div id="tour-dates" class="col-sm-offset-3 col-sm-6"></div>
 		</div>
 	</div>
 
@@ -147,7 +148,7 @@
 	});
 
 	$(document).ready(function() {
-		setTimeout($(window).trigger('hwparallax.reconfigure'), 10000);
+		setTimeout($(window).trigger('hwparallax.reconfigure'), 3500);
 	});
 
 	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
