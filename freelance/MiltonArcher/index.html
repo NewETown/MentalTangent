@@ -10,6 +10,13 @@
 </head>
 <body>
 
+	<!-- Mobile header with logo -->
+	<div class="row mobile-header">
+		<div class="col-md-12">
+			<img src="img/tokyo_logo.png" class="img-responsive">
+		</div>
+	</div>
+
 <!-- 100% hero image -->
 	<!-- TBN_packshot.jpg -->
 	<div class="parallax" data-image="img/hero-background.jpg" data-width="1444" data-height="1074" style="height:763px;">
@@ -132,7 +139,11 @@
 <script src="js/hw-parallax.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
-	$('.parallax').parallax();
+	var p_wid = $( window ).width() > 700;
+
+	if (p_wid) {
+		$('.parallax').parallax();
+	}
 
 	var widget = new BIT.Widget({ 
 		"artist":"Hook N Sling", 
@@ -148,7 +159,9 @@
 	});
 
 	$(document).ready(function() {
-		setTimeout($(window).trigger('hwparallax.reconfigure'), 3500);
+		if (p_wid) {
+			setTimeout($(window).trigger('hwparallax.reconfigure'), 3500);
+		}
 	});
 
 	!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
