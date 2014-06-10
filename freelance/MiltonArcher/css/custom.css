@@ -20,10 +20,6 @@ footer.row {
 	margin-bottom: 0px;
 }
 
-.mobile-header {
-	display: none;
-}
-
 .hero {
 	height: 800px;
 }
@@ -109,22 +105,4 @@ footer p:last-child {
 .carousel-control.right {
 	background-image: none;
 	background-repeat: none;
-}
-
-.first-merch {
-	margin-left:13%;
-}
-
-@media(max-width: 720px) {
-	.parallax {
-		display: none;
-	}
-
-	.mobile-header {
-		display: inherit;
-	}
-
-	.first-merch {
-		margin-left: inherit;
-	}
 }
