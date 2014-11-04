@@ -17,7 +17,7 @@ body {
   padding-top: 15px;
   padding-bottom: 15px;
   width: 100%;
-  background-color: rgba(255,255,255,.8);
+  background-color: rgba(255,255,255,.9);
   z-index: 999;
   padding-bottom: 0;
 }
@@ -63,15 +63,15 @@ body {
 }
 
 .post-content {
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0,0,0,.5);
   transition: background-color .5s;
   z-index:100;
   height: 100%;
+  text-align: center;
 }
 
 .post-content > h1 {
   padding-top: 1em;
-  text-align: center;
 }
 
 .post-content > p {
@@ -79,10 +79,7 @@ body {
   bottom: 0;
   padding: 0em 1em .5em 1em;
   margin-bottom: 0;
-}
-
-.post-content:hover {
-  background-color: rgba(0,0,0,.5);
+  width: 100%;
 }
 
 .post-shorts {
@@ -108,6 +105,14 @@ body {
 @media (min-width: 768px) {
   .post-spotlight {
     height: 500px;
+  }
+
+  .post-content {
+    background-color: rgba(0,0,0,0);
+  }
+
+  .post-content:hover {
+    background-color: rgba(0,0,0,.5);
   }
 
   .post-content > p {
