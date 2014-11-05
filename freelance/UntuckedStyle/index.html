@@ -1,65 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1" />
 
-    <title>Untucked Style</title>
-    <link rel="shortcut icon" href="../assets/images/other_images/statistically-me-favicon.ico">
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" />
-    <link href="css/untucked.css" media="screen" rel="stylesheet" />
-    <script src="js/modernizr.js"></script>
-    <script src="js/jquery.js"></script>
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="navbar" role="navigation">
-      <div class="container">
-        <div class="navbar-greeting">
-          <img src="img/logo.png" class="img-responsive logo">
-          <h1>Untucked Style</h1>
-            <p class="catch-phrase">Something Something Catch Phrase Something Something</p>
-        </div>
-        <ul class="text-center list-inline untucked-header-list">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Guidelines</a></li>
-          <li class="hidden-medium"><a href="#">Trending</a></li>
-          <li class="hidden-medium"><a href="#">Must-Have</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container-fluid post-shorts">
-      <div class="row">
-        <div class="col-md-12 col-sm-12">
-          <div class="post post-spotlight">
-            <div class="post-content">
-             <h1>This is the first post</h1>
-             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis leo ac consequat convallis. Suspendisse vestibulum mollis hendrerit. Donec aliquam maximus felis eu cursus.</p>
+        <title>Untucked Style</title>
+        <link rel="shortcut icon" href="../assets/images/other_images/statistically-me-favicon.ico">
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" />
+        <link href="css/untucked.css" media="screen" rel="stylesheet" />
+        <script src="js/modernizr.js"></script>
+        <script src="js/jquery.js"></script>
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="navbar" role="navigation">
+            <div class="container-fluid top-container">
+                <div class="navbar-greeting">
+                    <div class="row header-row">
+                        <div class="col-md-offset-3 col-md-2 col-xs-4">
+                            <img src="img/logo.png" class="img-responsive logo">
+                        </div>
+                        <div class="col-md-6 col-xs-8 header-text">
+                            <h1>Untucked Style</h1>
+                            <p class="catch-phrase">Something Something Catch Phrase Something Something</p>
+                        </div>
+                    </div>
+                </div>
+                <ul class="text-center list-inline untucked-header-list">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Basics</a></li>
+                    <li class="hidden-medium"><a href="#">Trending</a></li>
+                    <li class="hidden-medium"><a href="#">Must-Have</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
-          </div>
         </div>
-      </div>
-    </div> <!-- End main container -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        var lockedBar = $(".untucked-header-list");
-        // Scroll height for locking is 302px
-        $(window).scroll(function() {
-            if($(window).scrollTop() > 301) {
-                lockedBar.addClass("locked");
-            } else {
-                lockedBar.removeClass("locked");
-            }
+        <div class="container-fluid post-shorts">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <a href="#">
+                        <div class="post post-spotlight">
+                            <div class="post-content">
+                                <h1>This is the first post</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis leo ac consequat convallis. Suspendisse vestibulum mollis hendrerit. Donec aliquam maximus felis eu cursus.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6 col-xs-12">
+                    <h1>Test stuff</h1>
+                </div>
+            </div>
+        </div> <!-- End main container -->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            var lockedBar = $(".untucked-header-list");
+            // Scroll height for locking is 302px
+            $(window).scroll(function() {
+                if($(window).scrollTop() > 203) {
+                    lockedBar.addClass("locked");
+                } else {
+                    lockedBar.removeClass("locked");
+                }
+            });
         });
-    });
-    </script>
-  </body>
+        </script>
+    </body>
 </html>
