@@ -142,6 +142,7 @@ body {
 
 a.post {
     height: 200px;
+    color: #212121;
 }
 
 a.post:hover {
@@ -274,6 +275,11 @@ li a {
 .post-short {
     width: 100%;
     padding: .25em 1em .5em 1em;
+}
+
+.side-card {
+    background-color: #90A4AE;
+    padding: 1em;
 }
 
 .image-box {
