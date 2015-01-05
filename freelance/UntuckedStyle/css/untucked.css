@@ -283,9 +283,24 @@ li a {
 }
 
 .image-box {
+    display: inline-block;
+    width: 75%;
+    overflow: hidden;
+    z-index: 5;
+    position: absolute;
+    transition: width .3s ease-in;
+}
+
+.post:hover .image-box {
+    width: 45%;
 }
 
 .content-box {
+    display: inline-block;
+    position: absolute;
+    text-align: right;
+    right: 1.5em;
+    top: 2em;
 }
 
 .ripple-wrapper {
