@@ -1,0 +1,224 @@
+/****************
+ * Custom CSS for Mental Tangent Playground
+ * For overriding Bootstrap 3 pre-set stuff
+ * Updated 12/26/2013
+ * By Everett Carney, everett@mentaltangent.net
+ ****************/
+
+body {
+	margin: 0 !important;
+	padding: 0 !important;
+	color: #fff; 
+}
+
+.micro_screen {
+	display: none;
+	max-width: 350px;
+	margin-left: 5px;
+}
+
+#main {
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	overflow-y: hidden;
+}
+
+#main span {
+	display: inline-block;
+	*display: inline;
+}
+
+#ghost {
+	position: fixed;
+	margin-left: 900px;
+	margin-top: 450px;
+	z-index: 15;
+}
+
+#clouds {
+	position: fixed;
+	top: 0;
+	margin-top: 0;
+}
+
+#slider {
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+	width: 5000px;
+	height: 1000px;
+}
+
+#intro {
+	position: relative;
+	text-align: center;
+	width: 700px;
+	margin-left: 50px;
+	margin-right: -100px;
+	z-index: 10;
+	float: left;
+}
+
+#intro > p {
+	padding-top: 20px;
+}
+
+#skillSection {
+	display: inline-block;
+	position: relative;
+	width: 2000px;
+	height: 500px;
+	margin-left: 200px;
+	z-index: 10;
+}
+
+#skillSection div {
+	position: absolute;
+	width: 25%;
+	height: 100%;
+	padding-left: 25px;
+}
+
+#web {
+	margin-left: 0%;
+}
+
+#prog {
+	margin-left: 25%;
+}
+
+#devEnv {
+	margin-left: 50%;
+}
+
+#other {
+	margin-left: 75%;
+}
+
+.sky {
+	/* This is the #main containing class */
+	background-color: #4eadcc;
+	height: 100%;
+	z-index: -1; /* Because this is the blue background */
+}
+
+.grass_ph {
+	position:fixed;
+	bottom:0;
+	z-index:5;
+	width: 100%;
+	height: 15%;
+	background-color: #32a42c;
+}
+
+.shadow_background {
+	background-color: rgba(122, 120, 120, .3);
+	padding: 5px 5px 15px 5px;
+	height: auto;
+}
+
+#skillVals {
+	display: none;
+}
+
+.faded {
+	opacity: .2;
+}
+
+#otherProjects {
+	position: relative;
+	margin-left: 3000px;
+	width: 800px;
+	z-index: 10;
+	padding: 5px 5px 15px 5px;
+}
+
+#contact {
+	position: relative;
+	margin-left: 4050px;
+	margin-top: -275px;
+	width: 800px;
+	z-index: 10;
+}
+
+#slider a {
+	color: #bb5a58;
+}
+
+.customContainer {
+	padding-left: 10%;
+	width: 90%;
+}
+
+/* default styles here for older browsers. 
+   I tend to go for a 600px - 960px width max but using percentages
+*/
+@media only screen and (max-height: 1200px) { /* min-height <= 1200 */
+	#otherProjects {
+		margin-top: -500px;
+	}
+}
+
+@media only screen and (max-width: 980px) {
+	#intro {
+		margin-top: -100px;
+	}
+
+	#skillSection {
+		position: relative;
+		width: 750px;
+		height: 450px;
+		margin-left: 1500px;
+		z-index: 10;
+		margin-top: -200px;
+	}
+
+	#skillSection div {
+		position: absolute;
+		width: 50%;
+		height: 50%;
+	}
+}
+
+@media only screen and (max-height: 720px) {
+	#slider {
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+		width: 4850px;
+		height: 1000px;
+	}
+
+	#intro {
+		margin-top: -50px;
+	}
+
+	#skillSection {
+		margin-top: -150px;
+	}
+
+	#otherProjects {
+		margin-top: -400px;
+		margin-left: 2925px;
+	}
+
+	#contact {
+		margin-left: 3925px;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	#slider {
+		width: 360px;
+	}
+
+	.micro_screen {
+		display: block;
+	}
+
+	.micro_screen h1 {
+		text-align: center;
+	}
+
+	#intro, #skillSection, #otherProjects, #contact {
+		display: none;
+	}
+}

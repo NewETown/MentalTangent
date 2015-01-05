@@ -4,230 +4,27 @@
 	<meta charset="UTF-8">
 	<title>Mental Tangent: My Playground</title>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script src="js/raphael-min.js"></script>
-	<!-- <script src="js/divPeek.js"></script> -->
-	<script src="js/jquery.mousewheel.js"></script>
 	<meta property="og:title" content="Mental Tangent" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="http://www.mentaltangent.net" />
 	<meta property="og:description" content="This page is constantly a work in progress. If you visit one day and everything is broken try back soon, I'm likely in the middle of fixing it or testing new ideas." />
 	<!-- <meta property="og:image" content="" /> Need to get a cool image for this*** -->
 	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="css/custom.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="css/animation-playground.css">
 </head>
 <body>
-	<div id="main" class="sky">
-		<div id="slider">
-			<div id="sky"></div>
-			<div id="ghost">
-				<!-- This div will contain the ghost that we are animating today, 1/6/2014 -->
-			</div>
-
-			<div class="shadow_background micro_screen">
-				<!-- For very small screens -->
-				<h1>Mental Tangent</h1>
-				<p>Welcome to my playground! It looks like you're viewing this site on an extremely small screen; this site renders best on larger devices. To see the responsive, high-compatibility site please <a href="#">click here</a></p>
-			</div>
-
-			<div id="intro" class="shadow_background">
-				<h1><span id="m1" class="mental m1-anim">M</span><span id="e1" class="mental e1-anim">e</span><span id="n1" class="mental n1-anim">n</span><span id="t1" class="mental t1-anim">t</span><span id="a1" class="mental a1-anim">a</span><span id="l1" class="mental l1-anim">l</span> <span id="t2" class="tangent t2-anim">T</span><span id="a2" class="tangent a2-anim">a</span><span id="n2" class="tangent n2-anim">n</span><span id="g2" class="tangent g2-anim">g</span><span id="e2" class="tangent e2-anim">e</span><span id="n2" class="tangent n3-anim">n</span><span id="t2" class="tangent t3-anim">t</span></h1>
-
-				<p id="welcome" class="welcome-fade">Welcome to my <span id="pP">p</span><span id="pL">l</span><span id="pA">a</span><span id="pY">y</span><span id="pG">g</span><span id="pR">r</span><span id="pO">o</span><span id="pU">u</span><span id="pN">n</span><span id="pD">d</span>.</p>
-				<p class="welcome-fade">This page is constantly a work in progress. If you visit one day and everything is broken try back soon, I'm likely in the middle of fixing it or testing new ideas.</p>
-				<p class="welcome-fade">Want to watch the development of this site or contribute to the LiveCode Movement? <strong><a href="http://redd.it/1uqbg7">Click here</a></strong></p>
-				<p class="welcome-fade"><strong>If you're visiting on a mobile device this site might not render properly for you. I'm in the process of creating a more mobile-friendly site and will link to that as soon as it's finished.</strong></p>
-			</div>
-
-			<div id="skillSection" class="faded">
-				<!-- Cool skill charts representing programming skills -->
-				<div id="web"></div>
-				<div id="prog"></div>
-				<div id="devEnv"></div>
-				<div id="other"></div>
-			</div>
-
-			<div id="otherProjects" class="faded shadow_background">
-				<!-- This should be a cool box with my other sites and projects listed in it -->
-				<div class="customContainer">
-				<h1 style="text-align: center;">Other Projects</h1>
-				<h3><a href="http://aliveandmodern.com" target="blank">Alive and Modern</a></h3>
-				<p>Alive and Modern is a green design company that I created to learn about manufacturing and to promote the merger of nature and technology. I designed desktop-size living walls and modern architecture-inspired nano aquariums for people who want to bring life to the small places in homes or offices that frequently go un-decorated. </p>
-				<h3><a href="http://www.windowsphone.com/en-us/store/app/re/dfd5c9a7-2e02-4b4d-8f82-ada3d5360a28" target="blank">Re: (for Windows Phone)</a></h3>
-				<p>Re: is a project I did as an experiment to demonstrate a different method of searching on a mobile device. Text text lorem ipsup more stuff and things.</p>
-				</div>
-			</div>
-
-			<div id="contact" class="faded shadow_background">
-				<div class="customContainer">
-				<h1 style="text-align: center;">Want to get in touch?</h1>
-				<h3>Always available through <a href="https://angel.co/newetown">Angel List</a> or <a href="https://twitter.com/TheTechDude" target="blank">Twitter</a></h3>
-				<h3><strong>Email:</strong> <a href="mailto:everett@mentaltangent.net">everett@mentaltangent.net</a></h3>
-				<h3><strong>Linkedin:</strong> <a href="www.linkedin.com/in/everettcarney/" target="blank">Everett.Carney</a></h3>
-				</div>
-			</div>
-
-		</div> 
-
-		<div class="grass_ph"></div>
-
-	</div>
-
-	<div id="skillVals">
-		<div id="webSkills">
-			<div class="arc">
-				<span class="text">MySQL</span>
-				<input type="hidden" class="percent" value="65" />
-				<input type="hidden" class="color" value="#282830" />
-			</div>
-			<div class="arc">
-				<span class="text">PHP</span>
-				<input type="hidden" class="percent" value="70" />
-				<input type="hidden" class="color" value="#34325c" />
-			</div>
-			<div class="arc">
-				<span class="text">CSS</span>
-				<input type="hidden" class="percent" value="80" />
-				<input type="hidden" class="color" value="#5d3863" /> 
-			</div>
-			<div class="arc">
-				<span class="text">JavaScript</span>
-				<input type="hidden" class="percent" value="85" />
-				<input type="hidden" class="color" value="#3d5687" /> 
-			</div>
-			<div class="arc">
-				<span class="text">JQuery</span>
-				<input type="hidden" class="percent" value="90" />
-				<input type="hidden" class="color" value="#cd3431" /> 
-			</div>
-			<div class="arc">
-				<span class="text">HTML</span>
-				<input type="hidden" class="percent" value="95" />
-				<input type="hidden" class="color" value="#ad7994" /> 
-			</div>
-		</div>
-		<div id="progSkills">
-			<div class="arc">
-				<span class="text">Java</span>
-				<input type="hidden" class="percent" value="60" />
-				<input type="hidden" class="color" value="#282830" />
-			</div>
-			<div class="arc">
-				<span class="text">LUA</span>
-				<input type="hidden" class="percent" value="65" />
-				<input type="hidden" class="color" value="#34325c" />
-			</div>
-			<div class="arc">
-				<span class="text">C++</span>
-				<input type="hidden" class="percent" value="70" />
-				<input type="hidden" class="color" value="#5d3863" />
-			</div>
-			<div class="arc">
-				<span class="text">Python</span>
-				<input type="hidden" class="percent" value="90" />
-				<input type="hidden" class="color" value="#3d5687" />
-			</div>
-			<div class="arc">
-				<span class="text">C#</span>
-				<input type="hidden" class="percent" value="90" />
-				<input type="hidden" class="color" value="#cd3431" />
-			</div>
-		</div>
-		<div id="devEnvSkills">
-			<div class="arc">
-				<span class="text">Eclipse</span>
-				<input type="hidden" class="percent" value="70" />
-				<input type="hidden" class="color" value="#282830" />
-			</div>
-			<div class="arc">
-				<span class="text">MySQLWorkbench</span>
-				<input type="hidden" class="percent" value="75" />
-				<input type="hidden" class="color" value="#34325c" />
-			</div>
-			<div class="arc">
-				<span class="text">Visual Studio</span>
-				<input type="hidden" class="percent" value="90" />
-				<input type="hidden" class="color" value="#5d3863" />
-			</div>
-			<div class="arc">
-				<span class="text">Sublime Text</span>
-				<input type="hidden" class="percent" value="95" />
-				<input type="hidden" class="color" value="#3d5687" />
-			</div>
-		</div>
-		<div id="otherSkills">
-			<div class="arc">
-				<span class="text">Inkscape</span>
-				<input type="hidden" class="percent" value="65" />
-				<input type="hidden" class="color" value="#282830" />
-			</div>
-			<div class="arc">
-				<span class="text">phpMyAdmin</span>
-				<input type="hidden" class="percent" value="70" />
-				<input type="hidden" class="color" value="#34325c" />
-			</div>
-			<div class="arc">
-				<span class="text">Azure</span>
-				<input type="hidden" class="percent" value="80" />
-				<input type="hidden" class="color" value="#5d3863" />
-			</div>
-			<div class="arc">
-				<span class="text">XAMPP</span>
-				<input type="hidden" class="percent" value="95" />
-				<input type="hidden" class="color" value="#3d5687" />
-			</div>
-			<div class="arc">
-				<span class="text">Problem Solving</span>
-				<input type="hidden" class="percent" value="98" />
-				<input type="hidden" class="color" value="#cd3431" /> 
-			</div>
-		</div>
-	</div>
-
-	<script src="js/ghost.js"></script>
-	<script src="js/skillCharts.js"></script>
-	<script src="js/sky.js"></script>
-	<!-- <script src="js/cloud.js"></script> -->
-	<script type="text/javascript">
-		var playground = [$('#pP'), $('#pL'), $('#pA'), $("#pY"), $("#pG"), $("#pR"), $("#pO"), $("#pU"), $("#pN"), $("#pD")];
-		var backflips = ['backflip-0', 'backflip-1', 'backflip-2', 'backflip-3'];
-		// First we need to wait for the element to appear, then we can call random backflip ninja moves
-		var backflipCalls = 0;
-		function backflip() {
-			var flipInterval = setInterval(function () {
-				var _holder = playground,
-				_num = null;
-				for (var i = 0; i < 4; i++) {
-					_num = Math.floor(Math.random()*_holder.length);
-					$(_holder[_num]).addClass(backflips[i]);
-					_holder.splice(_num, 1);
-				};
-				backflipCalls++;
-				if(backflipCalls >= 4)
-					clearInterval(flipInterval);
-			}, 4000);
-		}
-
-		backflip();
-
-		var scroll = 0;
-
-		$('#main').mousewheel(function(event, delta) {
-			$('#ghost').toggleClass('ghost_walk');
-	    	this.scrollLeft -= (delta * 60);
-	    	event.preventDefault();
-
-	    	scroll = this.scrollLeft;
-
-	    	if (scroll >= 900)
-	            $('#skillSection').removeClass('faded').addClass("fade_in");
-	        if (scroll >= 1900)
-	        	$('#otherProjects').removeClass('faded').addClass("fade_in");
-	        if (scroll >= 2900)
-	        	$('#contact').removeClass('faded').addClass("fade_in");
-	    });
-	</script>
-
+	<div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6 col-xs-12">
+                <h1 class="text-center">Welcome</h1>
+                <p>To my temporary landing page! You've come to my site at a time when I'm trying to decide what I want to do with it next. My old site can be seen <a href="http://mentaltangent.net/freelance/mt_old/">here</a>.</p>
+                <p>At the moment I'm slammed with my promary job and two awesome side projects that I'm not ready to reveal yet. If you'd like to see samples of my previous work please email me: everett @ mentaltangent dot net or find me on <a href="https://angel.co/newetown">Angel List</a> or <a href="https://github.com/NewETown">GitHub</a>. I have a <a href="www.linkedin.com/in/everettcarney/">LinkedIn</a> account as well but I do not update that very often.</p>
+                <p>I'm also available on <a href="https://twitter.com/TheTechDude">Twitter</a> for quick communication!</p>
+                <p>Hopefully I'll have time to do something cool here soon. Until then, happy coding!</p>
+                <p>-Everett</p>
+            </div>
+        </div>
+    </div>
+    
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
