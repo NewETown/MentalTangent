@@ -1,6 +1,195 @@
+/*
+Gray blue theme
+50      #ECEFF1
+100     #CFD8DC
+200     #B0BEC5
+300     #90A4AE
+400     #78909C
+500     #607D8B
+600     #546E7A
+700     #455A64
+800     #37474F
+900     #263238
+
+A100    #84FFFF
+A200    #18FFFF
+A400    #00E5FF
+
+
+Primary colors: 300, 700, 900
+Accent: A400
+
+Gray used for light text: rgba(0, 0, 0, .2)
+*/
+
+/*
+ * Base elements 
+ */
+html {
+    min-height: 100%;
+    position: relative;
+}
+
 body {
-    /* Temp spacing */
-    min-height: 2500px;
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    background: #eaeaea;
+    margin-bottom: 80px;
+    color: #212121;
+}
+
+.paperize.container-fluid > .row:last-child {
+    padding-bottom: 30px;
+}
+
+.divider {
+    padding-bottom: 20px;
+}
+
+.divider:after {
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    position: absolute;
+    content: "";
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.italic {
+    font-style: italic;
+}
+
+.light-gray {
+    background-color: #CFD8DC;
+}
+
+.teal-gray {
+    background-color: #607D8B;
+}
+
+.dark-gray {
+    background-color: #455A64;
+}
+
+/*
+ * Animations
+ */
+.ink {
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    transform: scale(0);
+}
+
+.ink.teal-gray {
+    background: #607D8B;
+}
+
+.ink.light-gray {
+    background: rgba(0, 0, 0, .06);
+}
+
+.ink.animate {
+    -webkit-animation: ripple 0.65s linear;
+    animation: ripple 0.65s linear;
+}
+
+@-webkit-keyframes ripple {
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+@keyframes ripple {
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+/*
+ * General Paperized elements 
+ */
+.accent {
+    background-color: #00E5FF;
+}
+
+.raised-button {
+    text-transform: uppercase;
+    min-width: 88px;
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+
+.margin-bottom {
+    margin-bottom: 20px;
+}
+
+.raised-button:hover {
+    box-shadow: 0px 7px 10px rgba(0,0,0,0.14), 0px 6px 9px rgba(0,0,0,0.2);
+}
+
+.ink-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.spotlight-post-row {
+    height: 400px;
+}
+
+a.post {
+    height: 200px;
+}
+
+a.post:hover {
+    color: #212121;
+}
+
+.spotlight-post-row, .post-row {
+    margin-bottom: 20px;
+}
+
+/* 
+ * General helper classes
+ */
+.shadow-0 {
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.16), 0px 3px 6px rgba(0,0,0,0.23);
+}
+
+.shadow-1 {
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.14), 0px 3px 6px rgba(0,0,0,0.19);
+}
+
+.shadow-2 {
+    box-shadow: 0px 5px 8px 2px rgba(0,0,0,0.12), 0px 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Untucked-specific */
+a {
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    height: 36px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+}
+
+li a {
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    text-transform: uppercase;
+    height: 36px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    padding: 8px;
 }
 
 .top-container {
@@ -20,12 +209,8 @@ body {
 }
 
 .untucked-header-list {
-    padding-top: 15px;
-    padding-bottom: 15px;
     width: 100%;
-    background-color: #fff;
-    z-index: 999;
-    box-shadow: 0px 5px 8px 0px rgba(0,0,0,.18);
+    background: #f9f9f9;
 }
 
 .untucked-header-list > li {
@@ -41,7 +226,7 @@ body {
 }
 
 .logo {
-    max-height: 170px;
+    max-height: 140px;
     right: 0;
     position: absolute;
 }
@@ -51,8 +236,9 @@ body {
 }
 
 .post {
-    color: #fff;
     position: relative;
+    overflow: hidden;
+    background-color: #f9f9f9;
 }
 
 .post-content {
@@ -66,16 +252,23 @@ body {
     width: 100%;
 }
 
-.post-shorts {
-    margin-top: 70px;
+.post-spotlight {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
 }
 
-.post-spotlight {
+.post-spotlight-background {
     background-image: url(http://blog.trashness.com/wp-content/uploads/2012/11/Southwick-Dalton-Jackets-Tweed-men-style.jpeg);
     background-repeat: no-repeat;
     background-size: 100%;
     background-clip: content-box;
-    height: 200px;
+    background-position: center top;
+}
+
+.post-spotlight h1, .post-spotlight p {
+    color: #fff;
 }
 
 .post-short {
@@ -83,6 +276,94 @@ body {
     padding: .25em 1em .5em 1em;
 }
 
+.image-box {
+}
+
+.content-box {
+}
+
+.ripple-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+/* BOOTSTRAP OVERRIDES */
+a:hover {
+    text-decoration: none;
+    color: #00E5FF;
+}
+
+a:focus {
+    text-decoration: none;
+    color: #212121;
+}
+
+body {
+    /* Temp spacing */
+    min-height: 1500px;
+}
+
+.container-fluid {
+    height: 100%;
+}
+
+.navbar {
+    padding-bottom: 10px;
+    height: 220px;
+    border: none;
+    z-index: 999;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.list-inline {
+    margin-left: 0px;
+}
+
+.header-row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.btn {
+    position: relative;
+    padding: 8px 30px;
+    border: 0;
+    margin: 10px 1px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,.84);
+    -webkit-transition: box-shadow .28s cubic-bezier(0.4,0,.2,1);
+    transition: box-shadow .28s cubic-bezier(0.4,0,.2,1);
+    outline: 0!important;
+    background-color: transparent;
+}
+
+.btn:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,.2),0 3px 6px rgba(0,0,0,.28);
+    background-color: transparent;
+}
+
+.btn-default {
+    color: rgba(0,0,0,.84);
+}
+
+.btn-default:hover {
+    color: rgba(0,0,0,.84);
+}
+.logo-container {
+    height: 140px;
+}
+
+/* Media queries */
 @media (min-width: 481px) {
     .untucked-header-list > li {
         margin-left: .75em;
@@ -95,17 +376,17 @@ body {
         padding-top: 10px;
     }
     
-    .post-spotlight {
-        height: 500px;
-    }
-    
     .post-content {
-        background-color: rgba(0,0,0,.2);
-        transition: background-color .5s;
+        background-color: rgba(0,0,0,.8);
     }
     
-    .post:hover .post-content {
-        background-color: rgba(0,0,0,.8);
+    .post-spotlight .post-content {
+        bottom: -55px;
+        transition: bottom .3s ease-in;
+    }
+    
+    .post-spotlight:hover .post-content {
+        bottom: 0;
     }
     
     .untucked-header-list > li {
@@ -116,23 +397,4 @@ body {
     .hidden-medium {
         display: none;
     }
-}
-
-/* BOOTSTRAP OVERRIDES */
-* {
-    border-radius: 0 !important;
-}
-
-.navbar {
-    padding-bottom: 10px;
-    height: 200px;
-    border: none;
-}
-
-.list-inline {
-    margin-left: 0px;
-}
-.header-row {
-    margin-left: 0px;
-    margin-right: 0px;
 }

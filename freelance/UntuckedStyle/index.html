@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1" />
-
         <title>Untucked Style</title>
-        <link rel="shortcut icon" href="../assets/images/other_images/statistically-me-favicon.ico">
-        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:900,400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="/img/logo.ico">
         <link href="css/bootstrap.min.css" media="screen" rel="stylesheet" />
+<!--        <link href="css/material-wfont.min.css" rel="stylesheet">-->
         <link href="css/untucked.css" media="screen" rel="stylesheet" />
         <script src="js/modernizr.js"></script>
         <script src="js/jquery.js"></script>
@@ -16,11 +16,11 @@
         <![endif]-->
     </head>
     <body>
-        <div class="navbar" role="navigation">
-            <div class="container-fluid top-container">
+        <nav class="navbar shadow-2" role="navigation">
+            <div class="container-fluid">
                 <div class="navbar-greeting">
                     <div class="row header-row">
-                        <div class="col-md-offset-3 col-md-2 col-xs-4">
+                        <div class="col-md-offset-3 col-md-2 col-xs-4 logo-container">
                             <img src="img/logo.png" class="img-responsive logo">
                         </div>
                         <div class="col-md-6 col-xs-8 header-text">
@@ -28,35 +28,58 @@
                             <p class="catch-phrase">Something Something Catch Phrase Something Something</p>
                         </div>
                     </div>
+                    <ul class="text-center list-inline untucked-header-list">
+                        <li><div class="ink-container"><a href="#" class="ink-teal-gray">About</a></div></li>
+                        <li><div class="ink-container"><a href="#" class="ink-teal-gray">Basics</a></div></li>
+                        <li class="hidden-medium"><div class="ink-container"><a href="#" class="ink-teal-gray">Trending</a></div></li>
+                        <li class="hidden-medium"><div class="ink-container"><a href="#" class="ink-teal-gray">Must-Have</a></div></li>
+                        <li><div class="ink-container"><a href="#" class="ink-teal-gray">Contact</a></div></li>
+                    </ul>
                 </div>
-                <ul class="text-center list-inline untucked-header-list">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Basics</a></li>
-                    <li class="hidden-medium"><a href="#">Trending</a></li>
-                    <li class="hidden-medium"><a href="#">Must-Have</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
             </div>
-        </div>
-        <div class="container-fluid post-shorts">
-            <div class="row">
-                <div class="col-md-12 col-sm-12">
-                    <a href="#">
-                        <div class="post post-spotlight">
-                            <div class="post-content">
-                                <h1>This is the first post</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis leo ac consequat convallis. Suspendisse vestibulum mollis hendrerit. Donec aliquam maximus felis eu cursus.</p>
-                            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row hide-sm spotlight-post-row">
+                <div class="col-md-3">
+                    <a href="#" class="post-spotlight shadow-0">
+                        <div class="">
+                            <h1>This grabs attention!</h1>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="#" class="post-spotlight post-spotlight-background shadow-0">
+                        <div class="post-content">
+                            <h1>This is the first post</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis leo ac consequat convallis. Suspendisse vestibulum mollis hendrerit. Donec aliquam maximus felis eu cursus.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="post-spotlight shadow-0">
+                        <div class="">
+                            <h1>This grabs attention!</h1>
                         </div>
                     </a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-6 col-xs-12">
-                    <h1>Test stuff</h1>
+                    <a href="#" class="post shadow-0">
+                        <div class="row">
+                            <div class="image-box">
+                                <img src="http://placehold.it/300x200" class="post-image">
+                            </div>
+                            <div class="content-box">
+                                <h2>Test stuff</h2>
+                                <p>Some sample text and content and stuff blah blah</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div> <!-- End main container -->
+        
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -64,15 +87,75 @@
         <script type="text/javascript">
         $(document).ready(function() {
             var lockedBar = $(".untucked-header-list");
-            // Scroll height for locking is 302px
             $(window).scroll(function() {
-                if($(window).scrollTop() > 203) {
-                    lockedBar.addClass("locked");
+                if($(window).scrollTop() > 177) {
+                    lockedBar.addClass("locked shadow-2");
                 } else {
-                    lockedBar.removeClass("locked");
+                    lockedBar.removeClass("locked shadow-2");
                 }
             });
+            
+            $(".ink-teal-gray").click(function(e) {
+                var x = e.pageX;
+                var y = e.pageY;
+                var parent = $(this).parent();
+
+                inked(x, y, parent, 'teal-gray');
+            });
+
+            $(".ink-light-gray").click(function(e) {
+                var x = e.pageX;
+                var y = e.pageY;
+                var parent = $(this).parent();
+
+                inked(x, y, parent, 'light-gray');
+            });
+            
+            $('a').click(function(e) {
+                e.preventDefault();
+                
+                var el = $(e.target);
+                
+                var re = new RegExp('\\d*\\.\\d*', 'g');
+                
+                var ms = re.exec($(e.target).parent().find('.animate').css('animation-duration'));
+                ms = ms[0] * 1000;
+                console.log(ms);
+                
+                setTimeout(function(){
+                    // window.location = "http://google.com";
+                    console.log("Sound off");
+                }, ms);
+            });
         });
+            
+        var inked = function(pageX, pageY, parent, color) {
+            var ink, d, x, y;
+
+            //create .ink element if it doesn't exist
+            if(parent.find(".ink").length == 0)
+                parent.prepend("<span class='ink " + color + "'></span>");
+
+            ink = parent.find(".ink");
+            //incase of quick double clicks stop the previous animation
+            ink.removeClass("animate");
+
+            //set size of .ink
+            if(!ink.height() && !ink.width())
+            {
+                //use parent's width or height whichever is larger for the diameter to make a circle which can cover the entire element.
+                d = Math.max(parent.outerWidth(), parent.outerHeight());
+                ink.css({height: d, width: d});
+            }
+
+            //get click coordinates
+            //logic = click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center;
+            x = pageX - parent.offset().left - ink.width()/2;
+            y = pageY - parent.offset().top - ink.height()/2;
+
+            //set the position and add class .animate
+            ink.css({top: y+'px', left: x+'px'}).addClass("animate");
+        }
         </script>
     </body>
 </html>
