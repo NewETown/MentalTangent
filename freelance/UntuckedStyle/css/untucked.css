@@ -191,6 +191,7 @@ li a {
     display: block;
     position: relative;
     padding: 8px;
+    font-weight: bold;
 }
 
 .top-container {
@@ -286,8 +287,14 @@ li a {
     display: inline-block;
     width: 75%;
     overflow: hidden;
-    z-index: 5;
     position: absolute;
+    height: 100%;
+    background-image: url('http://placehold.it/500x200');
+    background-position: left center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    z-index: 5;
     transition: width .3s ease-in;
 }
 
@@ -300,7 +307,10 @@ li a {
     position: absolute;
     text-align: right;
     right: 1.5em;
-    top: 2em;
+    padding-top: 2em;
+    background: inherit;
+    height: 100%;
+    width: auto;
 }
 
 .ripple-wrapper {
