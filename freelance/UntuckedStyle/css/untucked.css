@@ -149,6 +149,13 @@ a.post:hover {
     color: #212121;
 }
 
+p.date {
+    bottom: 0;
+    font-style: italic;
+    position: absolute;
+    right: 0;
+}
+
 .spotlight-post-row, .post-row {
     margin-bottom: 20px;
 }
@@ -220,13 +227,6 @@ li a {
     margin-right: .2em;
 }
 
-.locked {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-}
-
 .logo {
     max-height: 140px;
     right: 0;
@@ -269,7 +269,7 @@ li a {
     background-position: center top;
 }
 
-.post-spotlight h1, .post-spotlight p {
+.post-spotlight h1, .post-spotlight h2, .post-spotlight h3, .post-spotlight p {
     color: #fff;
 }
 
@@ -280,7 +280,6 @@ li a {
 
 .side-card {
     background-color: #90A4AE;
-    padding: 1em;
 }
 
 .image-box {
@@ -298,8 +297,60 @@ li a {
     transition: width .3s ease-in;
 }
 
+.spotlight-img {
+    width: 50%;
+    position: absolute;
+    height: 50%;
+}
+
+.spotlight-img.top-left {
+    top: 0;
+    left: 0;
+}
+
+.spotlight-img.bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.spotlight-img.top-right {
+    top: 0;
+    right: 0;
+}
+
+.spotlight-img.bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.spotlight-title {
+    text-align: center;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: .9;
+    background-color: #90A4AE;
+    transition: opacity .3s ease-in;
+}
+
+.post-spotlight:hover .spotlight-title {
+    opacity: .2;
+}
+
+.spotlight-card {
+    height: 100%;
+}
+
 .post:hover .image-box {
     width: 45%;
+}
+
+.img-list > li{
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
 }
 
 .content-box {
@@ -392,6 +443,26 @@ body {
 }
 .logo-container {
     height: 140px;
+}
+
+/* Applied classes */
+.locked {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.locked-left-card {
+    position: fixed;
+    top: 60px;
+    left: 15px;
+}
+
+.locked-right-card {
+    position: fixed;
+    top: 60px;
+    right: 15px;
 }
 
 /* Media queries */
