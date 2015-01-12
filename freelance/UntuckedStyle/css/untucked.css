@@ -478,6 +478,10 @@ body {
         padding-top: 10px;
     }
     
+    .header-text h1 {
+        margin-bottom: 0px;
+    }
+    
     .post-content {
         background-color: rgba(0,0,0,.8);
     }
