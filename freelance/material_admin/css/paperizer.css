@@ -615,7 +615,7 @@ nav.paperize > .container-fluid > .navbar-header {
     bottom: 5px;
 }
 
-.navbar {
+.app-nav {
     position: fixed;
     top: 0;
     left: 0;
