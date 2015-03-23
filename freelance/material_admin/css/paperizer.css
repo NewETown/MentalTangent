@@ -614,6 +614,11 @@ nav.paperize > .container-fluid > .navbar-header {
     bottom: 5px;
 }
 
+.navbar-brand > h1 {
+    margin-top: 0;
+    color: #fff;
+}
+
 .app-nav {
     position: fixed;
     top: 0;
@@ -785,15 +790,15 @@ ul.paperize li a {
 }
 
 .img-1 {
-    background-image: url("../img/FilteredDevice.jpg");
+    background-image: url("http://placehold.it/550x550");
 }
 
 .img-2 {
-    background-image: url("../img/IMG_0533.JPG");
+    background-image: url("http://placehold.it/550x550");
 }
 
 .img-3 {
-    background-image: url("../img/IMG_0526.JPG");
+    background-image: url("http://placehold.it/550x550");
 }
 
 .light {
